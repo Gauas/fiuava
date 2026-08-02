@@ -1,0 +1,8 @@
+{
+  "scanned_at": "2026-08-01T03:30:00+07:00",
+  "framework": "Vite 6 / vanilla JavaScript",
+  "font_stack": "bundled Be Vietnam Pro body with bundled Lora display (Vietnamese subsets)",
+  "palette": "existing warm Fiuava palette, normalized to OKLCH tokens",
+  "motion": "motion-cut",
+  "spacing": "4-point named scale"
+}

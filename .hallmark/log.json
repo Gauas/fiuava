@@ -1,0 +1,114 @@
+[
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Fiuava locked Product Narrative",
+    "theme": "Fiuava locked system",
+    "enrichment": "three-card transparent feedback row",
+    "brief": "Remove the duplicate specialised-products section and expand customer feedback to three full-width cards"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Fiuava locked Product Narrative",
+    "theme": "Fiuava locked system",
+    "enrichment": "photographic field notes + botanical story spread",
+    "brief": "Replace industrial benefit cards and story placeholder with two supplied Fiuava lifestyle images"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "app",
+    "macrostructure": "Fiuava locked multi-page system",
+    "theme": "Fiuava locked system",
+    "enrichment": "botanical editorial media cards",
+    "brief": "Replace industrial media cards with asymmetric guava-themed cards and a more expressive Vietnamese display face"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "app",
+    "macrostructure": "Fiuava locked multi-page system",
+    "theme": "Fiuava locked system",
+    "enrichment": "flat 3:2 media cards",
+    "brief": "Repair Vietnamese typography and replace candy-wrapper card styling with restrained image-first cards"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "app",
+    "macrostructure": "Fiuava locked multi-page system",
+    "theme": "Fiuava locked system",
+    "enrichment": "five optimized member portraits",
+    "brief": "Add five named team members and optimize every route for 320, 375, 414 and 768px"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "about",
+    "macrostructure": "Team-led project story",
+    "theme": "Fiuava locked system",
+    "enrichment": "three labelled member placeholders",
+    "brief": "Move the development team directly below the story-page hero and clarify three project roles"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "about + introduce",
+    "macrostructure": "Editorial project story + two-track product process",
+    "theme": "Fiuava locked system",
+    "enrichment": "labelled team, ingredient and product placeholders",
+    "brief": "Add missing brand-story sections, advisor grid, product detail and six-step process"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "homepage",
+    "macrostructure": "Product Narrative with audience and feedback bands",
+    "theme": "Fiuava locked system",
+    "enrichment": "single hero cutout + labelled placeholders",
+    "brief": "Remove repeated product imagery and add audience and customer-feedback sections"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "homepage",
+    "macrostructure": "Soft Pink Showcase + Split Feature Stack",
+    "theme": "studied-DNA from user hero and section references",
+    "enrichment": "transparent Fiuava product cutout",
+    "brief": "Use the supplied cutout, reduce hero product scale, and add restrained scroll and hover motion"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "app",
+    "macrostructure": "Product Narrative",
+    "theme": "studied-DNA from user design image",
+    "enrichment": "exact Fiuava logo and product imagery",
+    "brief": "Rebuild all sections around the supplied Fiuava interface design"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "app",
+    "macrostructure": "Marquee + proportioned Long Document",
+    "theme": "Fiuava warm ivory, olive-sage and blush-coral",
+    "enrichment": "exact user-provided logo and product images",
+    "brief": "Match the entire website tone to the supplied Fiuava logo and product packaging"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "app",
+    "macrostructure": "Marquee + proportioned Long Document",
+    "theme": "Fiuava light guava green and blush pink",
+    "enrichment": "Fiuava logo + product asset + labelled placeholders",
+    "brief": "Apply supplied Fiuava product story, contact details, and brand palette"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "app",
+    "macrostructure": "Marquee + proportioned Long Document",
+    "theme": "Fiuava warm botanical",
+    "enrichment": "product asset + labelled placeholders",
+    "brief": "Fix Vietnamese typography, section proportions, and expose only clean routes"
+  },
+  {
+    "date": "2026-08-01",
+    "scope": "app",
+    "macrostructure": "Marquee + Long Document",
+    "theme": "Fiuava warm botanical",
+    "enrichment": "product asset + labelled placeholders",
+    "brief": "Split the CordyDew-inspired Fiuava site into five responsive pages"
+  }
+]

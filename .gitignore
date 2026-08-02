@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+.vite-preview.log
+.homepage-*.png
+.motion-*.png
+.interest-*.png
+.audience-*.png
+.feedback-*.png
+test-results/
