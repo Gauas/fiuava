@@ -16,7 +16,7 @@
 3. **Who has access:** Anyone.
 4. Deploy, cấp quyền và sao chép URL kết thúc bằng `/exec`.
 
-Ở bước cấp quyền, chấp nhận quyền gửi email. Biểu mẫu `/contact/` sẽ lưu dữ liệu vào Sheet và gửi một email tới `lienhe@fiuava.com`; địa chỉ người gửi được đặt làm **Reply-To** để có thể trả lời trực tiếp.
+Ở bước cấp quyền, chấp nhận quyền gửi email. Biểu mẫu `/contact/` sẽ lưu dữ liệu vào Sheet và gửi một email tới `lienhe@fiuava.website`; địa chỉ người gửi được đặt làm **Reply-To** để có thể trả lời trực tiếp.
 
 Khi sửa Apps Script, tạo **New version** trong **Manage deployments**; chỉ Save code sẽ không cập nhật bản đang chạy.
 
@@ -40,7 +40,7 @@ Khi deploy hosting, khai báo hai biến `VITE_...` trong phần Environment Var
 ## 4. Kiểm tra
 
 - Gửi thử trang `/survey/`: dữ liệu xuất hiện trong sheet `Khao sat`.
-- Gửi thử trang `/contact/`: dữ liệu xuất hiện trong sheet `Lien he` và hộp thư `lienhe@fiuava.com` nhận được nội dung.
+- Gửi thử trang `/contact/`: dữ liệu xuất hiện trong sheet `Lien he` và hộp thư `lienhe@fiuava.website` nhận được nội dung.
 - Hai sheet con và hàng tiêu đề được tạo tự động ở lần gửi đầu tiên.
 
 Nếu Apps Script đã được deploy trước đó, vào **Manage deployments → Edit → New version → Deploy** để bản đang chạy nhận phần gửi email mới. Email được gửi bằng tài khoản Google đã deploy script và chịu giới hạn gửi thư hằng ngày của Google Apps Script.

@@ -48,6 +48,7 @@ const icon = (name) => {
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
     calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/>',
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>',
   };
   return `<svg aria-hidden="true" viewBox="0 0 24 24">${paths[name]}</svg>`;
 };
@@ -70,7 +71,8 @@ const header = () => `
 
 const contactItems = `
   <a href="tel:+84364531571">${icon('phone')}<span><small>Điện thoại / Zalo</small>0364 531 571</span></a>
-  <a href="mailto:lienhe@fiuava.com">${icon('mail')}<span><small>Email</small>lienhe@fiuava.com</span></a>
+  <a href="mailto:lienhe@fiuava.website">${icon('mail')}<span><small>Email</small>lienhe@fiuava.website</span></a>
+  <a href="https://fiuava.website/" target="_blank" rel="noreferrer">${icon('globe')}<span><small>Website</small>fiuava.website</span></a>
   <a href="https://maps.google.com/?q=140+Lê+Trọng+Tấn,+phường+Tây+Thạnh,+TP.+Hồ+Chí+Minh" target="_blank" rel="noreferrer">${icon('pin')}<span><small>Địa chỉ</small>140 Lê Trọng Tấn, phường Tây Thạnh, TP. Hồ Chí Minh</span></a>`;
 
 const footer = () => `
@@ -250,7 +252,7 @@ const aboutPage = () => `<main id="main-content" class="about-page">
     ['Nguyễn Thành Phát','team/nguyen-thanh-phat.jpg'],
     ['Nguyễn Văn Việt','team/nguyen-van-viet.jpg']
   ].map(([name,src])=>`<article>${src ? `<figure class="team-photo"><img src="${asset(src)}" alt="Ảnh chân dung ${name}" width="800" height="1000" loading="lazy" decoding="async"></figure>` : imagePlaceholder(`Ảnh ${name}`, 'team-photo team-photo--placeholder')}<div><p>Thành viên dự án</p><h3>${name}</h3></div></article>`).join('')}</div></div></section>
-  <section class="about-identity shell"><figure class="about-identity__media"><img src="${asset('team/fiuava-team-group.png')}" width="1128" height="1409" loading="lazy" decoding="async" alt="Năm thành viên đội ngũ phát triển Fiuava"></figure><div class="about-identity__copy"><p class="eyebrow">Chúng tôi là ai?</p><h2>Một nhóm trẻ theo đuổi thực phẩm xanh và tiện dụng.</h2><p>Fiuava được hình thành từ nhu cầu thực tế về một món ăn vặt an toàn, dễ sử dụng nhưng vẫn mang lại giá trị dinh dưỡng. Nhóm lựa chọn bã ổi — nguồn phụ phẩm dồi dào từ ngành chế biến nước ép — làm điểm bắt đầu cho hành trình nghiên cứu.</p><p>Mục tiêu không chỉ là tạo ra một viên kẹo ngon, mà còn xây dựng giải pháp có khả năng kết nối sức khỏe người dùng với giá trị tuần hoàn của nông sản Việt.</p></div></section>
+  <section class="about-identity shell"><figure class="about-identity__media"><img src="${asset('team/fiuava-team-group.png')}" width="1128" height="1409" loading="lazy" decoding="async" alt="Năm thành viên đội ngũ phát triển Fiuava"></figure><div class="about-identity__copy"><p class="eyebrow">Chúng tôi là ai?</p><h2>Một nhóm trẻ theo đuổi thực phẩm xanh và tiện dụng.</h2><p>Fiuava được hình thành từ nhu cầu thực tế về một món ăn vặt an toàn, dễ sử dụng nhưng vẫn mang lại giá trị dinh dưỡng. Nhóm lựa chọn bã ổi — nguồn phụ phẩm dồi dào từ ngành chế biến nước ép — làm điểm bắt đầu cho hành trình nghiên cứu.</p><p>Mục tiêu không chỉ là tạo ra một viên kẹo ngon, mà còn xây dựng giải pháp có khả năng kết nối sức khỏe người dùng với giá trị tuần hoàn của nông sản Việt.</p><a class="text-link about-identity__website" href="https://fiuava.website/" target="_blank" rel="noreferrer">fiuava.website <span aria-hidden="true">↗</span></a></div></section>
   <section class="formation-section" aria-labelledby="formation-title"><div class="shell formation-layout"><header class="formation-heading"><p class="eyebrow">Câu chuyện hình thành Fiuava</p><h2 id="formation-title">Từ phần nguyên liệu bị bỏ quên đến một viên kẹo hữu ích.</h2><div class="formation-heading__copy"><p class="formation-lead">Bã ổi sau quá trình ép vẫn còn nguồn chất xơ tự nhiên có thể tiếp tục được khai thác.</p><p>Fiuava bắt đầu từ quan sát đó. Nhóm nghiên cứu cách thu nhận chất xơ, điều chỉnh hương vị và kết cấu để đưa nguồn nguyên liệu này vào một định dạng nhỏ gọn, gần gũi hơn với đời sống hằng ngày.</p></div></header><div class="foundation-list">${[
     ['Thông điệp','Biến một phần nguyên liệu thường bị bỏ lại thành lựa chọn nhỏ, dễ tiếp cận và dễ mang theo.'],
     ['Tầm nhìn','Phát triển thực phẩm từ nông sản Việt theo hướng có trách nhiệm và khai thác nguyên liệu hiệu quả hơn.'],
@@ -404,7 +406,7 @@ document.querySelectorAll('.js-form').forEach((form) => form.addEventListener('s
     await submitToGoogleSheets({ ...config, formType: form.dataset.formType, values });
     status.dataset.state = 'success';
     status.textContent = form.dataset.formType === 'contact'
-      ? 'Cảm ơn bạn! Nội dung đã được gửi tới lienhe@fiuava.com.'
+      ? 'Cảm ơn bạn! Nội dung đã được gửi tới lienhe@fiuava.website.'
       : 'Cảm ơn bạn! Dữ liệu đã được gửi đến Fiuava.';
     form.reset();
   } catch (error) {

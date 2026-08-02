@@ -2,7 +2,7 @@
  * Fiuava form receiver — bind this script to the target Google Sheet.
  * Deploy as Web app, execute as yourself, access: Anyone.
  */
-const CONTACT_RECIPIENT = 'lienhe@fiuava.com';
+const CONTACT_RECIPIENT = 'lienhe@fiuava.website';
 
 const FORM_CONFIG = Object.freeze({
   survey: {

@@ -267,6 +267,7 @@ ul, ol { padding: 0; }
 .about-identity__copy { min-width: 0; }
 .about-identity__copy h2 { max-width: 15ch; margin-block-start: var(--space-sm); color: var(--color-green); font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -.04em; }
 .about-identity__copy > p:not(.eyebrow) { max-width: 56ch; margin-block-start: var(--space-md); color: var(--color-ink-2); font-size: var(--text-md); line-height: 1.75; }
+.about-identity__website { margin-block-start: var(--space-lg); }
 .about-page .page-hero p:last-child, .about-page .team-section .section-title > p:last-child, .about-page .formation-heading__copy, .about-page .foundation-list p, .about-page .project-value-list p { font-size: var(--text-base); line-height: 1.75; }
 .about-page .team-grid article > div > p { font-size: var(--text-sm); }
 .formation-section { padding-block: clamp(var(--space-xl), 7vw, var(--space-3xl)); background: var(--color-paper-2); }
