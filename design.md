@@ -6,7 +6,7 @@ Hệ thống thiết kế thống nhất cho website đa trang Fiuava, được 
 Playful có tiết chế: thân thiện, mềm mại, mang hơi hướng thực vật và vẫn giữ độ tin cậy của một sản phẩm nghiên cứu.
 
 ## Macrostructure family
-- Marketing pages: Product Narrative — hero lệch trái có sản phẩm lớn, dải lợi ích giao với hero, câu chuyện thương hiệu, sản phẩm và CTA.
+- Marketing pages: Editorial Product Storyboard — hero là một khung cảnh thương hiệu, sau đó là các dải nội dung độc lập. Mỗi section trên Home chiếm một hàng riêng; không ghép hai section trong cùng wrapper và không để grid cha ép chiều cao hoặc chiều rộng nội dung con.
 - Content pages: long-form có mục lục nhẹ, tiêu đề rõ và khoảng đọc thoáng.
 - Form pages: tiêu đề ngắn, form chia nhóm, phản hồi trạng thái tại chỗ.
 
@@ -29,6 +29,9 @@ Playful có tiết chế: thân thiện, mềm mại, mang hơi hướng thực 
 - Section lợi ích dùng ảnh đời thường làm mảng neo, đi cùng các ghi chú phân cách bằng hairline; không đóng từng lợi ích vào card, không dùng icon medallion hay nền hộp lặp lại.
 - Section câu chuyện dùng bố cục split trên nền sage nhạt, ảnh vuông bo hữu cơ và tiêu đề Fraunces khổ lớn. Không mô phỏng viên kẹo hoặc bao bì bằng CSS.
 - Ảnh có nội dung riêng được đưa vào `public/assets/fiuava/`, khai báo kích thước nội tại, tải trì hoãn và giữ crop có chủ ý theo từng section.
+- Ảnh đời sống phải thống nhất ánh sáng tự nhiên, nền kem–gỗ sáng–sage và ngữ cảnh Việt Nam. Không dùng hình bác sĩ, mô hình nội tạng, nền xanh y khoa hoặc ảnh gia đình tạo dáng như quảng cáo bệnh lý.
+- Bao bì Fiuava trong hero, journey và CTA chỉ dùng `product.png` hoặc `product-cutout.png`; ảnh tạo sinh không được vẽ lại logo hay nhãn bao bì. Ảnh tạo sinh chỉ cung cấp bối cảnh đời sống/nguyên liệu và được tối ưu WebP trước khi đưa vào trang.
+- Home được phép dùng artwork tổng hợp do người dùng cung cấp cho hero và section dự án. Desktop hiển thị artwork theo đúng tỷ lệ gốc và bổ sung CTA bằng HTML; mobile dùng crop sản phẩm hoặc nội dung HTML tương đương để chữ không bị thu nhỏ đến mức khó đọc.
 
 ## Motion
 - Các trang nội dung dùng reveal-on-scroll một lần bằng opacity + translateY; card dùng hover-lift nhẹ trên thiết bị có con trỏ chính xác.
@@ -39,17 +42,29 @@ Playful có tiết chế: thân thiện, mềm mại, mang hơi hướng thực 
 - Primary: nền hồng ổi, dạng pill, nhãn ngắn và luôn trên một dòng.
 - Secondary: nền trong, viền mảnh.
 
+## Navigation voice
+- Desktop dùng navbar phẳng trên nền ivory: logo tách bên trái, liên kết chữ nhỏ viết hoa với khoảng cách rộng vừa phải và trạng thái active bằng gạch chân hồng.
+- Chỉ CTA cuối thanh điều hướng dùng nền hồng ổi dạng pill; các tab điều hướng không dùng capsule hoặc nền tô riêng.
+- Mobile giữ nút disclosure và panel một cột; trạng thái active dùng cùng ngôn ngữ gạch chân để nhất quán với desktop.
+
 ## What pages MUST share
 - Logo Fiuava, header, footer, màu nhấn, typography, button và focus ring.
 - Không sử dụng ảnh CordyDew; chỉ dùng logo, ảnh sản phẩm Fiuava hoặc placeholder trung tính.
-- Ảnh sản phẩm tách nền chỉ xuất hiện một lần trong hero homepage; các vị trí chưa có ảnh riêng phải dùng placeholder có nhãn.
+- Ảnh sản phẩm tách nền xuất hiện trong hero của trang dẫn sản phẩm và trang hồ sơ sản phẩm; Home được phép lặp lại một lần trong CTA cuối để khép lại câu chuyện.
 
 ## Content patterns
-- Trang Sản phẩm dùng phần giới thiệu chia đôi, hai thẻ dòng sản phẩm, quy trình 6 bước và dải đặc tính thiết kế.
+- Home dùng đúng trục 11 phần: morning-scene hero; “Có những ngày…”; mở một viên; ba vòng giá trị; hành trình phần quả bị bỏ lại; thời điểm sử dụng; từ ý tưởng đến sản phẩm; quality desk; nhật ký dùng thử; mini-quiz nhịp sống; CTA phản hồi. Không quay lại các section “Điểm khác biệt”, audience theo nhóm bệnh/lối sống, testimonial ba card giống nhau hoặc giấy chứng nhận minh họa.
+- Quality desk chỉ hiển thị tài liệu kiểm nghiệm thật. Khi chưa có tài liệu chính thức, nút phải ở trạng thái disabled và giải thích rõ lý do.
+- Nhật ký dùng thử có thể dùng phản hồi do người dùng cung cấp nhưng không tự gán tên, avatar hoặc vai trò. Mini-quiz chỉ đưa gợi ý về nhịp sử dụng, không dùng ngôn ngữ chẩn đoán sức khỏe.
+- Section “Có những ngày…” kết thúc ngay sau bốn khung tình huống, không thêm dải địa điểm sử dụng bên dưới. Fieldset của mini-quiz đặt legend thành một khối riêng bên trong bề mặt, và nhãn lựa chọn luôn giữ trên một dòng; nhóm lựa chọn được phép xuống hàng thay vì ép chữ.
+- Trang Sản phẩm không lặp lại các section “Những điều thú vị”, câu chuyện bã ổi, nhóm người dùng hay phản hồi từ Home. Trang tập trung vào hero packshot, hồ sơ/thông số dạng ledger, ba lớp trải nghiệm, quy trình phát triển–sản xuất dạng timeline, các điểm kiểm soát và CTA liên hệ.
+- Không dùng section “Hai phiên bản chuyên biệt” trên trang Sản phẩm. Các thông số chưa có kiểm nghiệm dùng nhãn trạng thái rõ ràng thay vì số liệu hoặc tuyên bố sức khỏe suy đoán.
 - Trang Câu chuyện đặt đội ngũ phát triển ngay sau hero, trước khối “Chúng tôi là ai?”, sau đó mới đến câu chuyện hình thành, bốn trụ cột và bốn lớp giá trị.
 - Nội dung liên quan sức khỏe dùng ngôn ngữ “hỗ trợ”, “định hướng” hoặc “mục tiêu phát triển” cho đến khi có dữ liệu kiểm nghiệm công bố.
 
 ## Responsive
+- Hero CTA luôn nằm trong luồng tài liệu: mobile đặt sau phần giới thiệu, desktop dùng một dải riêng dưới artwork; không neo nút bằng tọa độ phần trăm trên ảnh có chữ.
+- Audit responsive của Home bao phủ 320, 375, 414, 768, 1024, 1280 và 1440px.
 - Mobile-first; kiểm soát tại 320, 375, 414 và 768px.
 - Menu chuyển thành disclosure ở màn hình hẹp; mọi liên kết chính luôn trên một dòng.
 - Khoảng cách section trên mobile dùng nhịp 4.5rem thay vì nhịp desktop 7rem; CTA trong form chiếm toàn chiều rộng ở màn hình hẹp.

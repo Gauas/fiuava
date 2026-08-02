@@ -2,18 +2,22 @@
  * Fiuava form receiver — bind this script to the target Google Sheet.
  * Deploy as Web app, execute as yourself, access: Anyone.
  */
+const CONTACT_RECIPIENT = 'lienhe@fiuava.com';
+
 const FORM_CONFIG = Object.freeze({
   survey: {
     sheetName: 'Khao sat',
-    headers: ['Thời gian máy chủ', 'Thời gian trình duyệt', 'Nhóm tuổi', 'Quan tâm chất xơ', 'Phiên bản ưu tiên', 'Mức hương ổi', 'Mong chờ', 'Trang gửi', 'Thiết bị'],
+    headers: ['Thời gian máy chủ', 'Thời gian trình duyệt', 'Nhóm tuổi', 'Quan tâm chất xơ', 'Phiên bản ưu tiên', 'Mức hương ổi', 'Mong chờ', 'Trang gửi', 'Thiết bị', 'Hoạt động chính', 'Tần suất ăn nhẹ', 'Tần suất rau hoặc trái cây', 'Ưu tiên khi chọn', 'Độ ngọt', 'Kích thước viên', 'Thời điểm sử dụng', 'Kích thước gói', 'Thông tin bao bì', 'Mức sẵn sàng dùng thử'],
     fields: ['age', 'fiber', 'type', 'taste', 'message'],
-    required: ['age', 'fiber', 'type', 'taste'],
+    extraFields: ['role', 'snack_frequency', 'produce_frequency', 'priority', 'sweetness', 'texture', 'usage_time', 'pack_size', 'label_info', 'trial'],
+    required: ['age', 'role', 'snack_frequency', 'produce_frequency', 'fiber', 'priority', 'type', 'taste', 'sweetness', 'texture', 'usage_time', 'pack_size', 'label_info', 'trial'],
   },
   contact: {
     sheetName: 'Lien he',
-    headers: ['Thời gian máy chủ', 'Thời gian trình duyệt', 'Họ và tên', 'Số điện thoại', 'Email', 'Nội dung', 'Trang gửi', 'Thiết bị'],
+    headers: ['Thời gian máy chủ', 'Thời gian trình duyệt', 'Họ và tên', 'Số điện thoại', 'Email', 'Nội dung', 'Trang gửi', 'Thiết bị', 'Chủ đề'],
     fields: ['name', 'phone', 'email', 'message'],
-    required: ['name', 'phone', 'email', 'message'],
+    extraFields: ['topic'],
+    required: ['name', 'phone', 'email', 'topic', 'message'],
   },
 });
 
@@ -44,8 +48,10 @@ function doPost(event) {
       ...config.fields.map((field) => safeCell_(payload.values[field])),
       safeCell_(payload.pageUrl),
       safeCell_(payload.userAgent),
+      ...(config.extraFields || []).map((field) => safeCell_(payload.values[field])),
     ];
     sheet.appendRow(row);
+    if (payload.formType === 'contact') sendContactEmail_(payload);
     return jsonOutput_({ ok: true });
   } catch (error) {
     console.error(error);
@@ -78,11 +84,8 @@ function getOrCreateSheet_(config) {
   if (!spreadsheet) throw new Error('SCRIPT_NOT_BOUND_TO_SHEET');
   let sheet = spreadsheet.getSheetByName(config.sheetName);
   if (!sheet) sheet = spreadsheet.insertSheet(config.sheetName);
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(config.headers);
-    sheet.setFrozenRows(1);
-    sheet.getRange(1, 1, 1, config.headers.length).setFontWeight('bold');
-  }
+  sheet.getRange(1, 1, 1, config.headers.length).setValues([config.headers]).setFontWeight('bold');
+  sheet.setFrozenRows(1);
   return sheet;
 }
 
@@ -91,7 +94,41 @@ function safeCell_(value) {
   return /^[=+\-@]/.test(text) ? "'" + text : text;
 }
 
+function sendContactEmail_(payload) {
+  const values = payload.values || {};
+  const email = cleanText_(values.email, 254);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('INVALID_EMAIL');
+
+  const name = cleanText_(values.name, 160);
+  const phone = cleanText_(values.phone, 80);
+  const topic = cleanText_(values.topic, 120);
+  const message = cleanText_(values.message, 5000);
+  const subjectTopic = topic.replace(/[\r\n]+/g, ' ').trim() || 'Nội dung khác';
+  const body = [
+    'Bạn vừa nhận được một lời nhắn mới từ website Fiuava.',
+    '',
+    'Họ và tên: ' + name,
+    'Số điện thoại: ' + phone,
+    'Email: ' + email,
+    'Chủ đề: ' + topic,
+    '',
+    'Nội dung:',
+    message,
+    '',
+    'Thời gian gửi từ trình duyệt: ' + cleanText_(payload.submittedAt, 80),
+    'Trang gửi: ' + cleanText_(payload.pageUrl, 500),
+  ].join('\n');
+
+  MailApp.sendEmail(CONTACT_RECIPIENT, '[Fiuava] Liên hệ mới — ' + subjectTopic, body, {
+    name: 'Website Fiuava',
+    replyTo: email,
+  });
+}
+
+function cleanText_(value, maxLength) {
+  return String(value == null ? '' : value).trim().slice(0, maxLength);
+}
+
 function jsonOutput_(data) {
   return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
 }
-

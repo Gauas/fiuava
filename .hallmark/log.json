@@ -1,6 +1,86 @@
 [
   {
     "date": "2026-08-02",
+    "scope": "contact + survey + about",
+    "macrostructure": "Flat contact ledger + chaptered long-form survey + team-led story",
+    "theme": "Fiuava locked system",
+    "enrichment": "user-supplied five-member group portrait",
+    "brief": "Remove card-heavy contact styling, expand the product survey, add the missing team photograph and correct the first three member names"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Editorial product storyboard with independent product bands",
+    "theme": "Fiuava locked system",
+    "enrichment": "real product imagery in compact full-width rows",
+    "brief": "Remove the redundant moment-location strip and split the two product-experience sections into independent responsive rows"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Responsive editorial product storyboard",
+    "theme": "Fiuava locked system",
+    "enrichment": "flow-based hero action rail and multi-viewport UX hardening",
+    "brief": "Move hero actions out of percentage-positioned artwork and verify every homepage section from 320 to 1440 pixels"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Editorial product storyboard interaction cleanup",
+    "theme": "Fiuava locked system",
+    "enrichment": "restrained context strip and responsive rhythm quiz",
+    "brief": "Remove the unexplained dotted route and repair overlapping quiz legends and wrapped option labels"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Editorial product storyboard with supplied full-bleed artwork",
+    "theme": "Fiuava locked system",
+    "enrichment": "optimized user-supplied hero scene and project timeline artwork",
+    "brief": "Use the supplied Fiuava artwork for the homepage hero and project-origin section while restoring the missing hero CTAs"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Editorial product storyboard with full-width lower sections",
+    "theme": "Fiuava locked system",
+    "enrichment": "existing optimized lifestyle and journey imagery",
+    "brief": "Separate project, quality, trial diary and rhythm quiz into four independent full-width rows"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Editorial product storyboard with 7/5 paired bands",
+    "theme": "Fiuava locked system",
+    "enrichment": "optimized Vietnamese lifestyle photography + ingredient journey + real Fiuava packshots",
+    "brief": "Repair the broken full-page grid, replace medical and mismatched stock imagery, and align the homepage rhythm with the supplied reference"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "homepage",
+    "macrostructure": "Bento Grid with narrative spine",
+    "theme": "Fiuava locked system",
+    "enrichment": "real packshot, lifestyle collage, circular product diagram and interactive rhythm quiz",
+    "brief": "Rebuild Home as an eleven-part brand journey matching the supplied Fiuava composition without fabricated certificates or identities"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "introduce",
+    "macrostructure": "Product dossier + alternating production timeline",
+    "theme": "Fiuava locked system",
+    "enrichment": "single packshot hero + editorial specification ledger",
+    "brief": "Redesign the product route around product information, specifications and production process without repeating homepage sections"
+  },
+  {
+    "date": "2026-08-02",
+    "scope": "app",
+    "macrostructure": "Fiuava locked multi-page system",
+    "theme": "Fiuava locked system",
+    "enrichment": "flat underline navigation with isolated pill CTA",
+    "brief": "Restyle the shared navbar from the supplied light editorial navigation reference"
+  },
+  {
+    "date": "2026-08-02",
     "scope": "homepage",
     "macrostructure": "Fiuava locked Product Narrative",
     "theme": "Fiuava locked system",
@@ -78,37 +158,5 @@
     "theme": "studied-DNA from user design image",
     "enrichment": "exact Fiuava logo and product imagery",
     "brief": "Rebuild all sections around the supplied Fiuava interface design"
-  },
-  {
-    "date": "2026-08-01",
-    "scope": "app",
-    "macrostructure": "Marquee + proportioned Long Document",
-    "theme": "Fiuava warm ivory, olive-sage and blush-coral",
-    "enrichment": "exact user-provided logo and product images",
-    "brief": "Match the entire website tone to the supplied Fiuava logo and product packaging"
-  },
-  {
-    "date": "2026-08-01",
-    "scope": "app",
-    "macrostructure": "Marquee + proportioned Long Document",
-    "theme": "Fiuava light guava green and blush pink",
-    "enrichment": "Fiuava logo + product asset + labelled placeholders",
-    "brief": "Apply supplied Fiuava product story, contact details, and brand palette"
-  },
-  {
-    "date": "2026-08-01",
-    "scope": "app",
-    "macrostructure": "Marquee + proportioned Long Document",
-    "theme": "Fiuava warm botanical",
-    "enrichment": "product asset + labelled placeholders",
-    "brief": "Fix Vietnamese typography, section proportions, and expose only clean routes"
-  },
-  {
-    "date": "2026-08-01",
-    "scope": "app",
-    "macrostructure": "Marquee + Long Document",
-    "theme": "Fiuava warm botanical",
-    "enrichment": "product asset + labelled placeholders",
-    "brief": "Split the CordyDew-inspired Fiuava site into five responsive pages"
   }
 ]
