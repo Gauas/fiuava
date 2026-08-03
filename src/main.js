@@ -4,6 +4,7 @@ import '@fontsource/be-vietnam-pro/vietnamese-600.css';
 import '@fontsource/be-vietnam-pro/vietnamese-700.css';
 import '@fontsource/fraunces/vietnamese-600.css';
 import '@fontsource/fraunces/vietnamese-700.css';
+import '@fontsource/dancing-script/vietnamese-500.css';
 import './styles.css';
 import { getGoogleSheetsConfig, submitToGoogleSheets } from './google-sheets.js';
 
@@ -98,6 +99,102 @@ const imagePlaceholder = (label, className = '') => `
   <figure class="media-placeholder ${className}" role="img" aria-label="${label}">
     <span aria-hidden="true">+</span><figcaption>${label}</figcaption>
   </figure>`;
+
+const sharedCandyFormula = [
+  'Gelatin: 15g',
+  'Acid citric: 1,5g',
+  'Nước ép ổi hồng: 100ml',
+  'Chất xơ hòa tan SDF: 11,5g (tương đương 5%)',
+];
+
+const candyLines = [
+  {
+    id: 'kids',
+    eyebrow: 'Dành cho trẻ em',
+    title: 'Kẹo dẻo vị xoài, chanh đào, thơm',
+    short: 'Kẹo dẻo dai mềm, hương ổi tự nhiên chua ngọt, bổ sung chất xơ hòa tan từ bã ổi.',
+    imageLabel: 'Minh họa kẹo dẻo xơ ổi cho trẻ em',
+    image: 'audience/keo-tre-em.png',
+    status: 'Công thức có SDF 5%',
+    mediaBadge: 'Mềm dẻo · Tự nhiên · Ngon lành',
+    mediaScript: 'Tự nhiên\nNgon lành',
+    formula: sharedCandyFormula,
+    benefits: [
+      'Mang cấu trúc dai mềm cùng hương vị ổi tự nhiên chua ngọt kích thích vị giác, là món ăn vặt mà trẻ em dễ yêu thích.',
+      'Cung cấp lượng lớn chất xơ hòa tan được chiết xuất tinh khiết từ bã ổi, giúp phụ huynh giải quyết bài toán lười ăn rau ở trẻ.',
+      'Nuôi dưỡng hệ tiêu hóa của bé khỏe mạnh, hỗ trợ ngăn ngừa táo bón hiệu quả.',
+      'Hạn chế tình trạng sâu răng và kiểm soát được cân nặng của trẻ em.',
+    ],
+    note: 'Dòng kẹo này hướng đến một lựa chọn ăn vặt vui miệng nhưng vẫn có giá trị dinh dưỡng rõ ràng cho trẻ.',
+  },
+  {
+    id: 'diet',
+    eyebrow: 'Dành cho người ăn kiêng',
+    title: 'Kẹo Gum Tan Probiotics',
+    short: 'Kẹo nhai tan kiểu Mentos, kết hợp chất xơ tự nhiên, lợi khuẩn Probiotics và đường ăn kiêng.',
+    imageLabel: 'Minh họa kẹo gum tan probiotics cho người ăn kiêng',
+    image: 'audience/nguoi-an-kieng-keo.jpg',
+    status: 'Không sinh calo thừa',
+    mediaBadge: 'Probiotics · Tan nhanh · Dễ hấp thụ',
+    mediaScript: 'Nhẹ nhàng\nMỗi ngày',
+    formula: sharedCandyFormula,
+    benefits: [
+      'Cấu trúc kẹo nhai tan độc đáo, kết hợp chất xơ tự nhiên, hàng tỷ lợi khuẩn Probiotics và 100% đường ăn kiêng an toàn.',
+      'Được thiết kế cho dân văn phòng, người đang trong chế độ giảm cân hoặc cần kiểm soát đường huyết.',
+      'Thỏa mãn cơn thèm ngọt mà không sinh calo thừa từ đường thông thường.',
+      'Nhai một viên kẹo để nạp thêm chất xơ, cân bằng hệ vi sinh đường ruột và duy trì vóc dáng thon gọn.',
+      'Mang lại cảm giác nhẹ nhàng, không tạo cảm giác "tội lỗi" khi dùng như một món ăn vặt.',
+    ],
+    note: 'Dòng kẹo này tập trung vào trải nghiệm ngọt nhẹ, tiện dùng và phù hợp với người chăm sóc vóc dáng.',
+  },
+];
+
+const candyMedia = (image, imageLabel) => image
+  ? `<img src="${asset(image)}" width="900" height="600" loading="lazy" decoding="async" alt="${imageLabel}">`
+  : `<span aria-hidden="true">${icon('candy')}</span><figcaption>${imageLabel}</figcaption>`;
+
+const candyLineCard = ({ id, eyebrow, title, short, imageLabel, image, status, mediaBadge }) => `
+  <article class="candy-line-card candy-line-card--${id}">
+    <button class="candy-line-card__button" type="button" data-candy-line="${id}" aria-haspopup="dialog" aria-controls="candy-dialog-${id}">
+      <figure class="candy-line-card__media" role="img" aria-label="${imageLabel}">
+        ${candyMedia(image, imageLabel)}
+        <figcaption class="candy-line-card__badge"><span>${icon(id === 'kids' ? 'candy' : 'leaf')}</span>${mediaBadge}</figcaption>
+      </figure>
+      <div class="candy-line-card__copy">
+        <p class="eyebrow">${eyebrow}</p>
+        <h3>${title}</h3>
+        <p>${short}</p>
+        <div class="candy-line-card__footer"><small>${icon('leaf')}${status}</small><span aria-hidden="true">Xem chi tiết <b>↗</b></span></div>
+      </div>
+    </button>
+  </article>`;
+
+const candyLineDialog = ({ id, eyebrow, title, imageLabel, image, formula, benefits, note, mediaScript, status }) => `
+  <dialog class="candy-line-dialog" id="candy-dialog-${id}" data-candy-dialog="${id}" aria-labelledby="candy-dialog-${id}-title">
+    <div class="candy-line-dialog__inner">
+      <button class="candy-line-dialog__close" type="button" data-candy-close aria-label="Đóng">×</button>
+      <figure class="candy-line-dialog__media" role="img" aria-label="${imageLabel}">
+        ${candyMedia(image, imageLabel)}
+        <figcaption class="candy-line-dialog__script">${mediaScript.replace('\n', '<br>')}</figcaption>
+        <div class="candy-line-dialog__source"><span>${status}</span></div>
+      </figure>
+      <div class="candy-line-dialog__copy">
+        <header class="candy-line-dialog__heading">
+          <p class="eyebrow">Thông tin dòng kẹo · ${eyebrow}</p>
+          <h3 id="candy-dialog-${id}-title">${title}</h3>
+        </header>
+        <section class="candy-line-dialog__section">
+          <h4>Công thức</h4>
+          <ul class="candy-detail-list candy-detail-list--formula">${formula.map((item) => `<li><p>${item}</p></li>`).join('')}</ul>
+        </section>
+        <section class="candy-line-dialog__section">
+          <h4>Lợi ích</h4>
+          <ul class="candy-detail-list candy-detail-list--benefits">${benefits.map((item) => `<li><p>${item}</p></li>`).join('')}</ul>
+        </section>
+        <p class="candy-line-dialog__note"><span>${note}</span></p>
+      </div>
+    </div>
+  </dialog>`;
 
 const homePage = () => `
   <main id="main-content" class="brand-home">
@@ -203,10 +300,31 @@ const introducePage = () => `<main id="main-content" class="product-page">
         ['Hương vị','Ổi chua ngọt, hướng đến độ thơm dễ chịu'],
         ['Kết cấu','Dai mềm, hướng đến hạn chế bết dính'],
         ['Bao gói','Túi zip lớn, mỗi viên được gói riêng'],
-        ['Trạng thái','Công thức đang tiếp tục được hoàn thiện'],
+        ['Trạng thái','Hai dòng kẹo được giới thiệu <a class="inline-spec-link" href="#candy-lines">tại đây</a>'],
         ['Chỉ tiêu định lượng','Cập nhật sau kiểm nghiệm']
       ].map(([term,description])=>`<div><dt>${term}</dt><dd>${description}</dd></div>`).join('')}</dl>
     </div>
+  </section>
+
+  <section class="candy-lines-section shell" id="candy-lines" aria-labelledby="candy-lines-title">
+    <header class="candy-lines-heading">
+      <div>
+        <p class="eyebrow">Hai lựa chọn · Một tinh thần Fiuava</p>
+        <h2 id="candy-lines-title">Chúng tôi mang<br>đến <span>2 dòng kẹo</span></h2>
+      </div>
+      <svg class="candy-lines-heading__guava" aria-hidden="true" viewBox="0 0 260 180">
+        <path d="M111 52c-22-18-51-17-77 4 29 4 55-4 77-4Zm29-8c18-24 46-34 78-26-23 19-48 28-78 26Z"/>
+        <path d="M129 49c-7 12-9 28-6 44M132 44c11-8 22-13 34-16"/>
+        <path d="M126 63c47-9 86 20 84 67-2 39-33 48-76 38-36-8-55-31-42-63 8-20 18-35 34-42Z"/>
+        <path d="M131 85c21-7 49 5 55 27 6 24-10 41-35 38-26-3-41-20-35-39 4-13 7-21 15-26Z"/>
+        <path d="M131 58c-22-11-48-9-76 2M146 42c19-6 38-8 57-6"/>
+        <circle cx="137" cy="112" r="3"/><circle cx="151" cy="103" r="3"/><circle cx="165" cy="114" r="3"/><circle cx="143" cy="130" r="3"/><circle cx="162" cy="133" r="3"/>
+      </svg>
+    </header>
+    <div class="candy-lines-grid">
+      ${candyLines.map(candyLineCard).join('')}
+    </div>
+    ${candyLines.map(candyLineDialog).join('')}
   </section>
 
   <section class="product-anatomy" aria-labelledby="product-anatomy-title"><div class="shell">
@@ -319,6 +437,19 @@ const syncTopButton = () => topButton.classList.toggle('is-visible', window.scro
 window.addEventListener('scroll', syncTopButton, { passive: true }); syncTopButton();
 topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+document.querySelectorAll('[data-candy-line]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const dialog = document.querySelector(`[data-candy-dialog="${button.dataset.candyLine}"]`);
+    if (dialog) dialog.showModal();
+  });
+});
+
+document.querySelectorAll('.candy-line-dialog').forEach((dialog) => {
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog || event.target.closest('[data-candy-close]')) dialog.close();
+  });
+});
+
 const contactMap = document.querySelector('#contact-map');
 if (contactMap) {
   const initContactMap = async () => {
@@ -348,6 +479,8 @@ const revealTargets = document.querySelectorAll([
     '.product-overview .product-section-heading > *',
     '.product-overview__statement',
     '.product-spec-ledger > *',
+    '.candy-lines-heading > *',
+    '.candy-line-card',
     '.product-anatomy .product-section-heading',
     '.product-anatomy__list > *',
     '.production-heading > *',
