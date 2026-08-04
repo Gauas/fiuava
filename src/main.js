@@ -111,10 +111,10 @@ const candyLines = [
   {
     id: 'kids',
     eyebrow: 'Dành cho trẻ em',
-    title: 'Kẹo dẻo vị xoài, chanh đào, thơm',
+    title: 'Kẹo dẻo vị xoài, ổi, thơm',
     short: 'Kẹo dẻo dai mềm, hương ổi tự nhiên chua ngọt, bổ sung chất xơ hòa tan từ bã ổi.',
-    imageLabel: 'Minh họa kẹo dẻo xơ ổi cho trẻ em',
-    image: 'audience/keo-tre-em.png',
+    imageLabel: 'Bốn vị kẹo dẻo trái cây Fiuava dành cho trẻ em',
+    image: 'audience/keo-tre-em-huong-trai-cay.png',
     status: 'Công thức có SDF 5%',
     mediaBadge: 'Mềm dẻo · Tự nhiên · Ngon lành',
     mediaScript: 'Tự nhiên\nNgon lành',
