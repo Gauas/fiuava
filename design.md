@@ -1,6 +1,6 @@
-# Design — Fiuava
+# Design — GuavaFiber
 
-Hệ thống thiết kế thống nhất cho website đa trang Fiuava, được điều chỉnh theo ảnh thiết kế do người dùng cung cấp và nhận diện thật của sản phẩm.
+Hệ thống thiết kế thống nhất cho website đa trang GuavaFiber, được điều chỉnh theo ảnh thiết kế do người dùng cung cấp và nhận diện thật của sản phẩm.
 
 ## Genre
 Playful có tiết chế: thân thiện, mềm mại, mang hơi hướng thực vật và vẫn giữ độ tin cậy của một sản phẩm nghiên cứu.
@@ -30,7 +30,7 @@ Playful có tiết chế: thân thiện, mềm mại, mang hơi hướng thực 
 - Section câu chuyện dùng bố cục split trên nền sage nhạt, ảnh vuông bo hữu cơ và tiêu đề Fraunces khổ lớn. Không mô phỏng viên kẹo hoặc bao bì bằng CSS.
 - Ảnh có nội dung riêng được đưa vào `public/assets/fiuava/`, khai báo kích thước nội tại, tải trì hoãn và giữ crop có chủ ý theo từng section.
 - Ảnh đời sống phải thống nhất ánh sáng tự nhiên, nền kem–gỗ sáng–sage và ngữ cảnh Việt Nam. Không dùng hình bác sĩ, mô hình nội tạng, nền xanh y khoa hoặc ảnh gia đình tạo dáng như quảng cáo bệnh lý.
-- Bao bì Fiuava trong hero, journey và CTA chỉ dùng `product.png` hoặc `product-cutout.png`; ảnh tạo sinh không được vẽ lại logo hay nhãn bao bì. Ảnh tạo sinh chỉ cung cấp bối cảnh đời sống/nguyên liệu và được tối ưu WebP trước khi đưa vào trang.
+- Bao bì GuavaFiber trong hero, journey và CTA chỉ dùng `product.png` hoặc `product-cutout.png`; ảnh tạo sinh không được vẽ lại logo hay nhãn bao bì. Ảnh tạo sinh chỉ cung cấp bối cảnh đời sống/nguyên liệu và được tối ưu WebP trước khi đưa vào trang.
 - Home được phép dùng artwork tổng hợp do người dùng cung cấp cho hero và section dự án. Desktop hiển thị artwork theo đúng tỷ lệ gốc và bổ sung CTA bằng HTML; mobile dùng crop sản phẩm hoặc nội dung HTML tương đương để chữ không bị thu nhỏ đến mức khó đọc.
 
 ## Motion
@@ -48,8 +48,8 @@ Playful có tiết chế: thân thiện, mềm mại, mang hơi hướng thực 
 - Mobile giữ nút disclosure và panel một cột; trạng thái active dùng cùng ngôn ngữ gạch chân để nhất quán với desktop.
 
 ## What pages MUST share
-- Logo Fiuava, header, footer, màu nhấn, typography, button và focus ring.
-- Không sử dụng ảnh CordyDew; chỉ dùng logo, ảnh sản phẩm Fiuava hoặc placeholder trung tính.
+- Logo GuavaFiber, header, footer, màu nhấn, typography, button và focus ring.
+- Không sử dụng ảnh CordyDew; chỉ dùng logo, ảnh sản phẩm GuavaFiber hoặc placeholder trung tính.
 - Ảnh sản phẩm tách nền xuất hiện trong hero của trang dẫn sản phẩm và trang hồ sơ sản phẩm; Home được phép lặp lại một lần trong CTA cuối để khép lại câu chuyện.
 
 ## Content patterns

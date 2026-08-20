@@ -2,9 +2,6 @@ import '@fontsource/be-vietnam-pro/vietnamese-400.css';
 import '@fontsource/be-vietnam-pro/vietnamese-500.css';
 import '@fontsource/be-vietnam-pro/vietnamese-600.css';
 import '@fontsource/be-vietnam-pro/vietnamese-700.css';
-import '@fontsource/fraunces/vietnamese-600.css';
-import '@fontsource/fraunces/vietnamese-700.css';
-import '@fontsource/dancing-script/vietnamese-500.css';
 import './styles.css';
 import { getGoogleSheetsConfig, submitToGoogleSheets } from './google-sheets.js';
 
@@ -57,8 +54,8 @@ const icon = (name) => {
 const header = () => `
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="${routes.home}" aria-label="Fiuava — Trang chủ">
-        <img src="${asset('logo.png')}" width="499" height="446" alt="Fiuava" />
+      <a class="brand" href="${routes.home}" aria-label="GuavaFiber — Trang chủ">
+        <img src="${asset('guavafiber-logo-v4.png')}" width="1600" height="900" alt="GuavaFiber" />
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span>Menu</span><i aria-hidden="true"></i>
@@ -72,27 +69,27 @@ const header = () => `
 
 const contactItems = `
   <a href="tel:+84364531571">${icon('phone')}<span><small>Điện thoại / Zalo</small>0364 531 571</span></a>
-  <a href="mailto:lienhe@fiuava.website">${icon('mail')}<span><small>Email</small>lienhe@fiuava.website</span></a>
-  <a href="https://fiuava.website/" target="_blank" rel="noreferrer">${icon('globe')}<span><small>Website</small>fiuava.website</span></a>
+  <a href="mailto:contact@guavafiber.website">${icon('mail')}<span><small>Email</small>contact@guavafiber.website</span></a>
+  <a href="https://guavafiber.website/" target="_blank" rel="noreferrer">${icon('globe')}<span><small>Website</small>guavafiber.website</span></a>
   <a href="https://maps.google.com/?q=140+Lê+Trọng+Tấn,+phường+Tây+Thạnh,+TP.+Hồ+Chí+Minh" target="_blank" rel="noreferrer">${icon('pin')}<span><small>Địa chỉ</small>140 Lê Trọng Tấn, phường Tây Thạnh, TP. Hồ Chí Minh</span></a>`;
 
 const footer = () => `
   ${page === 'home' || page === 'contact' ? '' : `<section class="closing-cta">
     <div class="shell closing-inner">
-      <div><h2>Nhẹ bụng mỗi ngày cùng Fiuava</h2><p>Một viên kẹo nhỏ, thêm một lựa chọn dễ chịu cho hệ tiêu hóa.</p></div>
+      <div><h2>Nhẹ bụng mỗi ngày cùng GuavaFiber</h2><p>Một viên kẹo nhỏ, thêm một lựa chọn dễ chịu cho hệ tiêu hóa.</p></div>
       <a class="button button--light" href="${routes.contact}">${icon('bag')} Liên hệ ngay</a>
     </div>
   </section>`}
   <footer class="site-footer">
     <div class="shell footer-grid">
       <section class="footer-brand">
-        <img src="${asset('logo.png')}" width="499" height="446" alt="Fiuava" />
+        <img src="${asset('guavafiber-logo-v4.png')}" width="1600" height="900" alt="GuavaFiber" />
         <p>Kẹo dinh dưỡng tiện lợi từ nguồn chất xơ tự nhiên thu nhận từ phụ phẩm bã ổi.</p>
       </section>
       <section><h2>Khám phá</h2><ul>${navItems.slice(0, 4).map(([, label, href]) => `<li><a href="${href}">${label}</a></li>`).join('')}</ul></section>
       <section><h2>Liên hệ</h2><div class="footer-contact">${contactItems}</div></section>
     </div>
-    <div class="shell footer-bottom"><span>© <span data-year></span> Fiuava.</span><span>Kẹo dinh dưỡng từ chất xơ bã ổi.</span></div>
+    <div class="shell footer-bottom"><span>© <span data-year></span> GuavaFiber.</span><span>Kẹo dinh dưỡng từ chất xơ bã ổi.</span></div>
   </footer>`;
 
 const imagePlaceholder = (label, className = '') => `
@@ -113,8 +110,8 @@ const candyLines = [
     eyebrow: 'Dành cho trẻ em',
     title: 'Kẹo dẻo vị xoài, ổi, thơm',
     short: 'Kẹo dẻo dai mềm, hương ổi tự nhiên chua ngọt, bổ sung chất xơ hòa tan từ bã ổi.',
-    imageLabel: 'Bốn vị kẹo dẻo trái cây Fiuava dành cho trẻ em',
-    image: 'audience/keo-tre-em-huong-trai-cay.png',
+    imageLabel: 'Bốn vị kẹo dẻo trái cây GuavaFiber dành cho trẻ em',
+    image: 'guavafiber-product-v4.png',
     status: 'Công thức có SDF 5%',
     mediaBadge: 'Mềm dẻo · Tự nhiên · Ngon lành',
     mediaScript: 'Tự nhiên\nNgon lành',
@@ -133,7 +130,7 @@ const candyLines = [
     title: 'Kẹo Gum Tan Probiotics',
     short: 'Kẹo nhai tan kiểu Mentos, kết hợp chất xơ tự nhiên, lợi khuẩn Probiotics và đường ăn kiêng.',
     imageLabel: 'Minh họa kẹo gum tan probiotics cho người ăn kiêng',
-    image: 'audience/nguoi-an-kieng-keo.jpg',
+    image: 'guavafiber-process-v2.png',
     status: 'Không sinh calo thừa',
     mediaBadge: 'Probiotics · Tan nhanh · Dễ hấp thụ',
     mediaScript: 'Nhẹ nhàng\nMỗi ngày',
@@ -200,29 +197,37 @@ const homePage = () => `
   <main id="main-content" class="brand-home">
     <section class="morning-hero" aria-labelledby="home-title">
       <div class="morning-hero__scene">
-        <figure class="morning-hero__visual"><img src="${asset('editorial/home-hero-artwork.jpg')}" width="2170" height="725" fetchpriority="high" decoding="async" alt="Gói kẹo ổi hồng Fiuava giữa hoa, lá và quả ổi hồng"></figure>
+        <figure class="morning-hero__visual"><img src="${asset('guavafiber-packaging-v4.png')}" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Bao bì GuavaFiber đồng bộ logo bên cạnh kẹo gói riêng và quả ổi tươi"></figure>
         <div class="morning-hero__copy">
-          <p class="eyebrow">Kẹo ổi hồng Fiuava</p>
-          <h1 id="home-title">Nhẹ nhàng bắt đầu<br>từ một điều <span>rất nhỏ.</span></h1>
-          <p>Một viên kẹo ổi hồng thơm dịu, tiện mang theo và được phát triển từ nguồn chất xơ tự nhiên.</p>
-          <div class="button-row"><a class="button button--primary" href="${routes.introduce}">Khám phá Fiuava</a><a class="button button--outline" href="#open-fiuava"><span aria-hidden="true">▶</span> Xem viên kẹo bên trong</a></div>
+          <p class="eyebrow">Kẹo chất xơ tự nhiên</p>
+          <h1 id="home-title">Ngon gọn gàng.<br><span>Năng lượng mỗi ngày.</span></h1>
+          <p>GuavaFiber là món kẹo chất xơ từ ổi với hương vị tươi sáng, bao bì tiện dụng và thiết kế phù hợp cho mọi nhịp sống.</p>
+          <ul class="hero-proof" aria-label="Điểm nổi bật"><li><b>5%</b><span>chất xơ hòa tan</span></li><li><b>01</b><span>viên gói riêng</span></li><li><b>100%</b><span>cảm hứng từ ổi Việt</span></li></ul>
+          <div class="button-row"><a class="button button--primary" href="${routes.introduce}">Khám phá GuavaFiber</a><a class="button button--outline" href="#open-fiuava"><span aria-hidden="true">▶</span> Xem thành phần</a></div>
         </div>
       </div>
     </section>
 
+    <section class="shop-strip" aria-label="Cam kết sản phẩm"><div class="shell shop-strip__grid">
+      <article><span>01</span><div><b>Vị ổi rõ ràng</b><small>Chua ngọt cân bằng</small></div></article>
+      <article><span>02</span><div><b>Gọn để mang theo</b><small>Từng viên đóng riêng</small></div></article>
+      <article><span>03</span><div><b>Nguồn xơ tuần hoàn</b><small>Từ phụ phẩm bã ổi</small></div></article>
+      <article><span>04</span><div><b>Phù hợp nhiều độ tuổi</b><small>Thiết kế dễ hiểu, dễ dùng</small></div></article>
+    </div></section>
+
     <section class="life-moments" id="experience" aria-labelledby="moments-title"><div class="shell">
       <header class="home-heading home-heading--inline"><span aria-hidden="true">${icon('clock')}</span><h2 id="moments-title">Có những ngày…</h2></header>
       <div class="moment-grid">
-        <article class="moment-card moment-card--one"><img src="${asset('lifestyle/morning-desk.webp')}" width="960" height="640" loading="eager" decoding="async" alt="Một buổi sáng bận rộn bên bàn làm việc"><p>Có những ngày bạn ăn vội hơn bình thường.</p></article>
-        <article class="moment-card moment-card--two"><img src="${asset('lifestyle/hurried-meal.webp')}" width="960" height="640" loading="eager" decoding="async" alt="Một bữa ăn vội thiếu rau xanh"><p>Có những ngày rau xanh bị bỏ quên.</p></article>
-        <article class="moment-card moment-card--three"><img src="${asset('lifestyle/everyday-bag.webp')}" width="960" height="640" loading="eager" decoding="async" alt="Túi xách và những vật dụng nhỏ mang theo hằng ngày"><p>Có những lúc bạn chỉ muốn một món nhỏ, dễ ăn và dễ mang theo.</p></article>
-        <article class="moment-card moment-card--answer"><img src="${asset('logo.png')}" width="499" height="446" loading="lazy" decoding="async" alt="Fiuava"><p>Fiuava được tạo ra cho những khoảnh khắc như thế.</p></article>
+        <article class="moment-card moment-card--one"><img src="${asset('journey/pink-guava.webp')}" width="960" height="640" loading="eager" decoding="async" alt="Quả ổi tươi"><p>Cho buổi sáng gọn nhẹ hơn.</p></article>
+        <article class="moment-card moment-card--two"><img src="${asset('journey/food-research.webp')}" width="960" height="640" loading="eager" decoding="async" alt="Nghiên cứu thực phẩm"><p>Cho giờ nghỉ giữa ngày đủ vị.</p></article>
+        <article class="moment-card moment-card--three"><img src="${asset('guavafiber-product-v4.png')}" width="1024" height="1024" loading="eager" decoding="async" alt="Kẹo GuavaFiber và ổi xanh"><p>Cho hành trình cần một món ăn vặt tiện lợi.</p></article>
+        <article class="moment-card moment-card--answer"><img src="${asset('guavafiber-logo-v4.png')}" width="1600" height="900" loading="lazy" decoding="async" alt="GuavaFiber"><p>GuavaFiber đi cùng nhiều khoảnh khắc trong ngày.</p></article>
       </div>
     </div></section>
 
     <section class="open-fiuava shell" id="open-fiuava" aria-labelledby="open-title">
-      <figure class="open-fiuava__visual"><img src="${asset('product.png')}" width="617" height="587" loading="lazy" decoding="async" alt="Bao bì và viên kẹo Fiuava trong khung cảnh ổi hồng"></figure>
-      <div class="open-fiuava__copy"><header class="home-heading"><span aria-hidden="true">${icon('candy')}</span><h2 id="open-title">Mở một viên Fiuava</h2></header><ol class="open-layers">${[
+      <figure class="open-fiuava__visual"><img src="${asset('guavafiber-product-v4.png')}" width="1024" height="1024" loading="lazy" decoding="async" alt="Kẹo GuavaFiber trong hộp trưng bày xanh lá"></figure>
+      <div class="open-fiuava__copy"><header class="home-heading"><span aria-hidden="true">${icon('candy')}</span><h2 id="open-title">Mở một viên GuavaFiber</h2></header><ol class="open-layers">${[
         ['package','Lớp 1 — Mở gói','Mỗi viên được đóng gói riêng, sạch sẽ và thuận tiện mang theo.'],
         ['heart','Lớp 2 — Cảm nhận','Hương ổi hồng dịu nhẹ, kết cấu mềm và dễ sử dụng mỗi ngày.'],
         ['leaf','Lớp 3 — Giá trị bên trong','Được phát triển từ nguồn chất xơ thu nhận từ bã ổi.']
@@ -231,61 +236,61 @@ const homePage = () => `
 
     <section class="candy-inside shell" aria-labelledby="inside-title"><div class="candy-inside__panel">
       <header class="home-heading home-heading--center"><h2 id="inside-title">Một viên nhỏ có gì?</h2></header>
-      <div class="candy-orbit"><figure class="candy-orbit__center"><img src="${asset('editorial/individual-candy-wrapper.jpg')}" width="1313" height="1198" loading="eager" decoding="async" alt="Một viên kẹo ổi hồng Fiuava được gói riêng"></figure><article><span>${icon('leaf')}</span><h3>Nguyên liệu</h3><p>Chất xơ có nguồn gốc từ phụ phẩm bã ổi.</p></article><article><span>${icon('heart')}</span><h3>Trải nghiệm</h3><p>Hương vị gần gũi, kích thước nhỏ và dễ sử dụng.</p></article><article><span>${icon('package')}</span><h3>Tiện lợi</h3><p>Gói riêng từng viên, phù hợp cho nhiều thời điểm trong ngày.</p></article></div>
-      <p class="product-disclaimer">Fiuava là sản phẩm thực phẩm, không phải thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="candy-orbit"><figure class="candy-orbit__center"><img src="${asset('guavafiber-product-v4.png')}" width="1024" height="1024" loading="eager" decoding="async" alt="Kẹo ổi GuavaFiber được gói riêng"></figure><article><span>${icon('leaf')}</span><h3>Nguyên liệu</h3><p>Chất xơ có nguồn gốc từ phụ phẩm bã ổi.</p></article><article><span>${icon('heart')}</span><h3>Trải nghiệm</h3><p>Hương vị gần gũi, kích thước nhỏ và dễ sử dụng.</p></article><article><span>${icon('package')}</span><h3>Tiện lợi</h3><p>Gói riêng từng viên, phù hợp cho nhiều thời điểm trong ngày.</p></article></div>
+      <p class="product-disclaimer">GuavaFiber là sản phẩm thực phẩm, không phải thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
     </div></section>
 
     <section class="guava-journey shell" aria-labelledby="journey-title"><header class="guava-journey__intro"><p class="eyebrow">Hành trình của phần quả thường bị bỏ lại</p><h2 id="journey-title">Không phải phần còn lại nào cũng là thứ nên bỏ đi.</h2></header><ol class="journey-track">${[
       ['01','Quả ổi được sử dụng','Phần thịt và nước ổi trở thành thực phẩm, đồ uống.','journey/pink-guava.webp','Quả ổi hồng tươi'],
       ['02','Phần bã còn lại','Bã ổi vẫn chứa nguồn chất xơ có thể tiếp tục được khai thác.','journey/guava-pomace.webp','Phần bã ổi sau khi ép'],
       ['03','Nghiên cứu và xử lý','Nguồn nguyên liệu được lựa chọn, xử lý và đưa vào quá trình phát triển công thức.','journey/food-research.webp','Không gian nghiên cứu nguyên liệu thực phẩm'],
-      ['04','Trở thành Fiuava','Từ phần nguyên liệu dễ bị bỏ quên đến một viên kẹo nhỏ, tiện lợi hơn trong cuộc sống.','product-cutout.png','Gói Fiuava và viên kẹo gói riêng']
+      ['04','Trở thành GuavaFiber','Từ phần nguyên liệu dễ bị bỏ quên đến một viên kẹo nhỏ, tiện lợi hơn trong cuộc sống.','guavafiber-product-v4.png','Kẹo GuavaFiber đóng gói riêng']
     ].map(([n,title,copy,src,alt])=>`<li><b>${n}</b><figure><img src="${asset(src)}" width="960" height="640" loading="eager" decoding="async" alt="${alt}"></figure><h3>${title}</h3><p>${copy}</p></li>`).join('')}</ol></section>
 
-    <section class="when-section" aria-labelledby="when-title"><div class="shell"><header class="home-heading home-heading--inline"><span aria-hidden="true">${icon('clock')}</span><h2 id="when-title">Fiuava đi cùng bạn khi nào?</h2></header><div class="when-grid">${[
-      ['Sau một bữa ăn vội','Một lựa chọn nhỏ, dễ mang theo trong ngày bận rộn.','lifestyle/after-meal.webp'],
-      ['Trong giờ nghỉ giữa ngày','Hương ổi nhẹ nhàng cho một khoảng nghỉ ngắn.','interest-lifestyle.jpg'],
-      ['Trên đường đi học hoặc đi làm','Mỗi viên gói riêng, thuận tiện để trong túi.','lifestyle/commute.webp'],
-      ['Khi cả nhà muốn chia sẻ','Một gói kẹo có thể trở thành khoảnh khắc vui vẻ chung.','lifestyle/family-sharing.webp']
+    <section class="when-section" aria-labelledby="when-title"><div class="shell"><header class="home-heading home-heading--inline"><span aria-hidden="true">${icon('clock')}</span><h2 id="when-title">GuavaFiber đi cùng bạn khi nào?</h2></header><div class="when-grid">${[
+      ['Sau một bữa ăn vội','Một lựa chọn nhỏ, dễ mang theo trong ngày bận rộn.','story-rushed-meal.png'],
+      ['Trong giờ nghỉ giữa ngày','Hương ổi nhẹ nhàng cho một khoảng nghỉ ngắn.','story-midday-break.png'],
+      ['Trên đường đi học hoặc đi làm','Mỗi viên gói riêng, thuận tiện để trong túi.','story-commute.png'],
+      ['Khi cả nhà muốn chia sẻ','Một gói kẹo có thể trở thành khoảnh khắc vui vẻ chung.','story-family-sharing.png']
     ].map(([title,copy,src])=>`<article><figure><img src="${asset(src)}" width="960" height="640" loading="eager" decoding="async" alt="${title}"></figure><div><h3>${title}</h3><p>${copy}</p></div></article>`).join('')}</div></div></section>
 
-    <section class="project-origin shell" id="project" aria-labelledby="project-title"><figure class="project-origin__artwork"><img src="${asset('editorial/project-origin-artwork.jpg')}" width="1916" height="821" loading="lazy" decoding="async" alt="Hành trình Fiuava từ việc nhìn thấy vấn đề, nghiên cứu nguyên liệu, phát triển công thức đến lắng nghe người dùng"></figure><div class="project-origin__mobile-content"><div class="project-origin__intro"><img src="${asset('logo.png')}" width="499" height="446" loading="lazy" decoding="async" alt="Fiuava"><h2 id="project-title">Fiuava không bắt đầu từ một viên kẹo.</h2><p>Sản phẩm bắt đầu từ một câu hỏi: liệu phần bã ổi có thể tiếp tục tạo ra giá trị?</p><a class="text-link" href="${routes.about}">Khám phá dự án Fiuava <span>→</span></a></div><ol class="project-steps">${[
+    <section class="project-origin shell" id="project" aria-labelledby="project-title"><figure class="project-origin__artwork"><img src="${asset('guavafiber-process-v2.png')}" width="1916" height="821" loading="lazy" decoding="async" alt="Hành trình GuavaFiber từ việc nhìn thấy vấn đề, nghiên cứu nguyên liệu, phát triển công thức đến lắng nghe người dùng"></figure><div class="project-origin__mobile-content"><div class="project-origin__intro"><img src="${asset('guavafiber-logo-v4.png')}" width="499" height="446" loading="lazy" decoding="async" alt="GuavaFiber"><h2 id="project-title">GuavaFiber không bắt đầu từ một viên kẹo.</h2><p>Sản phẩm bắt đầu từ một câu hỏi: liệu phần bã ổi có thể tiếp tục tạo ra giá trị?</p><a class="text-link" href="${routes.about}">Khám phá dự án GuavaFiber <span>→</span></a></div><ol class="project-steps">${[
       ['search','Nhìn thấy vấn đề','Phụ phẩm bã ổi chưa được tận dụng hiệu quả.'],
       ['flask','Nghiên cứu nguyên liệu','Tìm hiểu đặc tính và khả năng ứng dụng của chất xơ.'],
       ['candy','Phát triển công thức','Điều chỉnh hương vị, kết cấu và trải nghiệm sử dụng.'],
       ['users','Lắng nghe người dùng','Khảo sát cảm quan và tiếp tục hoàn thiện sản phẩm.']
-    ].map(([name,title,copy],i)=>`<li><b>${String(i+1).padStart(2,'0')}</b><span>${icon(name)}</span><h3>${title}</h3><p>${copy}</p></li>`).join('')}</ol></div><div class="project-origin__desktop-action"><a class="button button--outline" href="${routes.about}">Khám phá dự án Fiuava</a></div></section>
+    ].map(([name,title,copy],i)=>`<li><b>${String(i+1).padStart(2,'0')}</b><span>${icon(name)}</span><h3>${title}</h3><p>${copy}</p></li>`).join('')}</ol></div><div class="project-origin__desktop-action"><a class="button button--outline" href="${routes.about}">Khám phá dự án GuavaFiber</a></div></section>
 
-    <section class="quality-desk shell" aria-labelledby="quality-home-title"><div class="quality-desk__visual"><img src="${asset('product.png')}" width="617" height="587" loading="lazy" decoding="async" alt="Sản phẩm Fiuava trên bàn kiểm tra chất lượng"><span>${icon('search')}</span></div><div class="quality-desk__copy"><header class="home-heading"><h2 id="quality-home-title">Điều chúng tôi kiểm tra trước khi sản phẩm đến tay bạn</h2></header><div class="quality-checks">${[
+    <section class="quality-desk shell" aria-labelledby="quality-home-title"><div class="quality-desk__visual"><img src="${asset('guavafiber-process-v2.png')}" width="617" height="587" loading="lazy" decoding="async" alt="Sản phẩm GuavaFiber trên bàn kiểm tra chất lượng"><span>${icon('search')}</span></div><div class="quality-desk__copy"><header class="home-heading"><h2 id="quality-home-title">Điều chúng tôi kiểm tra trước khi sản phẩm đến tay bạn</h2></header><div class="quality-checks">${[
       ['leaf','Nguyên liệu','Nguồn nguyên liệu và quy trình xử lý được theo dõi rõ ràng.'],
       ['shield','Chất lượng sản phẩm','Các chỉ tiêu phù hợp được đánh giá trong quá trình phát triển.'],
       ['package','Thông tin minh bạch','Thành phần và hướng dẫn sử dụng được trình bày rõ trên bao bì.']
     ].map(([name,title,copy])=>`<article><span>${icon(name)}</span><div><h3>${title}</h3><p>${copy}</p></div></article>`).join('')}</div><button class="button button--outline" type="button" disabled aria-describedby="quality-doc-note">Tài liệu đang cập nhật</button><p id="quality-doc-note" class="quality-doc-note">Tài liệu kiểm nghiệm chỉ được hiển thị khi có bản chính thức.</p></div></section>
 
-    <section class="trial-diary shell" id="feedback" aria-labelledby="diary-title"><div><header class="home-heading home-heading--center"><p class="eyebrow">Phản hồi từ đợt dùng thử</p><h2 id="diary-title">Nhật ký dùng thử Fiuava</h2></header><ol class="diary-line">${[
-      ['lifestyle/everyday-bag.webp','Ngày đầu tiên','“Mình ấn tượng vì từng viên được gói riêng và dễ mang theo.”'],
-      ['lifestyle/after-meal.webp','Sau vài lần sử dụng','“Hương ổi nhẹ, không tạo cảm giác quá gắt.”'],
-      ['lifestyle/morning-desk.webp','Điều người dùng muốn thay đổi','“Mình muốn có thêm lựa chọn về độ ngọt và kích thước gói.”']
+    <section class="trial-diary shell" id="feedback" aria-labelledby="diary-title"><div><header class="home-heading home-heading--center"><p class="eyebrow">Phản hồi từ đợt dùng thử</p><h2 id="diary-title">Nhật ký dùng thử GuavaFiber</h2></header><ol class="diary-line">${[
+      ['guavafiber-product-v4.png','Ngày đầu tiên','“Mình ấn tượng vì từng viên được gói riêng và dễ mang theo.”'],
+      ['journey/pink-guava.webp','Sau vài lần sử dụng','“Hương ổi nhẹ, không tạo cảm giác quá gắt.”'],
+      ['journey/food-research.webp','Điều người dùng muốn thay đổi','“Mình muốn có thêm lựa chọn về độ ngọt và kích thước gói.”']
     ].map(([src,title,quote])=>`<li><figure><img src="${asset(src)}" width="960" height="640" loading="eager" decoding="async" alt="Hình ảnh minh họa cho phản hồi ẩn danh"></figure><div><small>Phản hồi ẩn danh</small><h3>${title}</h3><blockquote>${quote}</blockquote></div></li>`).join('')}</ol><div class="diary-action"><a class="button button--outline" href="${routes.survey}">Xem cảm nhận khách hàng</a></div></div></section>
 
-    <section class="rhythm-section shell" aria-labelledby="rhythm-title"><div class="rhythm-panel"><header><p class="eyebrow">Khám phá nhịp sống của bạn</p><h2 id="rhythm-title">Fiuava nào hợp với nhịp sống của bạn?</h2><p>Chọn nhanh ba câu để nhận một gợi ý nhẹ nhàng — không phải chẩn đoán sức khỏe.</p></header><form class="rhythm-quiz"><fieldset><legend>Bạn thường ăn nhẹ vào thời điểm nào?</legend><div><label><input type="radio" name="time" value="midday"><span>Giữa buổi</span></label><label><input type="radio" name="time" value="meal"><span>Sau bữa ăn</span></label><label><input type="radio" name="time" value="travel"><span>Trên đường</span></label></div></fieldset><fieldset><legend>Điều bạn quan tâm hơn?</legend><div><label><input type="radio" name="priority" value="taste"><span>Hương vị</span></label><label><input type="radio" name="priority" value="convenience"><span>Sự tiện lợi</span></label><label><input type="radio" name="priority" value="ingredient"><span>Thành phần</span></label></div></fieldset><fieldset><legend>Bạn thường mang sản phẩm theo ở đâu?</legend><div><label><input type="radio" name="place" value="bag"><span>Túi xách</span></label><label><input type="radio" name="place" value="desk"><span>Bàn làm việc</span></label><label><input type="radio" name="place" value="backpack"><span>Balo</span></label></div></fieldset><output class="rhythm-result" hidden aria-live="polite"><strong>Bạn thuộc nhóm “Nhẹ nhàng giữa ngày”</strong><span>Một viên kẹo gói riêng có thể phù hợp với những khoảng nghỉ ngắn của bạn.</span></output><a class="button button--primary" href="${routes.survey}">Làm khảo sát đầy đủ</a></form></div></section>
+    <section class="rhythm-section shell" aria-labelledby="rhythm-title"><div class="rhythm-panel"><header><p class="eyebrow">Khám phá nhịp sống của bạn</p><h2 id="rhythm-title">GuavaFiber nào hợp với nhịp sống của bạn?</h2><p>Chọn nhanh ba câu để nhận một gợi ý nhẹ nhàng — không phải chẩn đoán sức khỏe.</p></header><form class="rhythm-quiz"><fieldset><legend>Bạn thường ăn nhẹ vào thời điểm nào?</legend><div><label><input type="radio" name="time" value="midday"><span>Giữa buổi</span></label><label><input type="radio" name="time" value="meal"><span>Sau bữa ăn</span></label><label><input type="radio" name="time" value="travel"><span>Trên đường</span></label></div></fieldset><fieldset><legend>Điều bạn quan tâm hơn?</legend><div><label><input type="radio" name="priority" value="taste"><span>Hương vị</span></label><label><input type="radio" name="priority" value="convenience"><span>Sự tiện lợi</span></label><label><input type="radio" name="priority" value="ingredient"><span>Thành phần</span></label></div></fieldset><fieldset><legend>Bạn thường mang sản phẩm theo ở đâu?</legend><div><label><input type="radio" name="place" value="bag"><span>Túi xách</span></label><label><input type="radio" name="place" value="desk"><span>Bàn làm việc</span></label><label><input type="radio" name="place" value="backpack"><span>Balo</span></label></div></fieldset><output class="rhythm-result" hidden aria-live="polite"><strong>Bạn thuộc nhóm “Nhẹ nhàng giữa ngày”</strong><span>Một viên kẹo gói riêng có thể phù hợp với những khoảng nghỉ ngắn của bạn.</span></output><a class="button button--primary" href="${routes.survey}">Làm khảo sát đầy đủ</a></form></div></section>
 
-    <section class="home-final"><div class="shell home-final__inner"><figure><img src="${asset('product-cutout.png')}" width="512" height="487" loading="lazy" decoding="async" alt="Fiuava và các viên kẹo ổi hồng"></figure><div><h2>Cùng Fiuava hoàn thiện viên kẹo tiếp theo.</h2><p>Một sản phẩm tốt hơn được tạo nên từ những phản hồi thật. Hãy chia sẻ cảm nhận về hương vị, kết cấu, bao bì và trải nghiệm của bạn.</p><div class="button-row"><a class="button button--light" href="${routes.survey}">Chia sẻ cảm nhận</a><a class="button button--outline" href="${routes.about}">Tìm hiểu về Fiuava</a></div></div></div></section>
+    <section class="home-final"><div class="shell home-final__inner"><figure><img src="${asset('guavafiber-product-v4.png')}" width="512" height="487" loading="lazy" decoding="async" alt="GuavaFiber và các viên kẹo ổi hồng"></figure><div><h2>Cùng GuavaFiber hoàn thiện viên kẹo tiếp theo.</h2><p>Một sản phẩm tốt hơn được tạo nên từ những phản hồi thật. Hãy chia sẻ cảm nhận về hương vị, kết cấu, bao bì và trải nghiệm của bạn.</p><div class="button-row"><a class="button button--light" href="${routes.survey}">Chia sẻ cảm nhận</a><a class="button button--outline" href="${routes.about}">Tìm hiểu về GuavaFiber</a></div></div></div></section>
   </main>`;
 
-const pageHero = (eyebrow, title, copy, product = false) => `<section class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p>${copy}</p></div>${product ? `<figure><img src="${asset('product.png')}" width="617" height="587" alt="Sản phẩm Fiuava" /></figure>` : ''}</div></section>`;
+const pageHero = (eyebrow, title, copy, product = false) => `<section class="page-hero"><div class="shell page-hero-grid"><div><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p>${copy}</p></div>${product ? `<figure><img src="${asset('guavafiber-product-v4.png')}" width="617" height="587" alt="Sản phẩm GuavaFiber" /></figure>` : ''}</div></section>`;
 
 const introducePage = () => `<main id="main-content" class="product-page">
   <section class="product-showcase">
     <div class="shell product-showcase__grid">
       <div class="product-showcase__copy">
-        <p class="eyebrow">Hồ sơ sản phẩm Fiuava</p>
+        <p class="eyebrow">Hồ sơ sản phẩm GuavaFiber</p>
         <h1>Kẹo ổi hồng từ nguồn xơ bã ổi.</h1>
-        <p>Fiuava đưa phần chất xơ còn lại trong bã ổi vào một định dạng kẹo nhỏ gọn, có hương ổi chua ngọt và từng viên được gói riêng để thuận tiện mang theo.</p>
+        <p>GuavaFiber đưa phần chất xơ còn lại trong bã ổi vào một định dạng kẹo nhỏ gọn, có hương ổi chua ngọt và từng viên được gói riêng để thuận tiện mang theo.</p>
         <div class="button-row"><a class="button button--primary" href="#product-specs">Xem thông số <b aria-hidden="true">↓</b></a><a class="button button--outline" href="#production-process">Xem quy trình</a></div>
         <ul class="product-showcase__facts"><li><span>Dạng sản phẩm</span><strong>Kẹo ổi hồng</strong></li><li><span>Nguồn xơ</span><strong>Phụ phẩm bã ổi</strong></li><li><span>Quy cách</span><strong>Gói riêng từng viên</strong></li></ul>
       </div>
-      <figure class="product-showcase__visual"><span aria-hidden="true"></span><img src="${asset('product-cutout.png')}" width="512" height="487" alt="Túi kẹo ổi hồng Fiuava cùng các viên kẹo gói riêng"><figcaption>Thiết kế bao bì hiện tại của Fiuava</figcaption></figure>
+      <figure class="product-showcase__visual"><span aria-hidden="true"></span><img src="${asset('guavafiber-product-v4.png')}" width="512" height="487" alt="Túi kẹo ổi hồng GuavaFiber cùng các viên kẹo gói riêng"><figcaption>Thiết kế bao bì hiện tại của GuavaFiber</figcaption></figure>
     </div>
   </section>
 
@@ -309,7 +314,7 @@ const introducePage = () => `<main id="main-content" class="product-page">
   <section class="candy-lines-section shell" id="candy-lines" aria-labelledby="candy-lines-title">
     <header class="candy-lines-heading">
       <div>
-        <p class="eyebrow">Hai lựa chọn · Một tinh thần Fiuava</p>
+        <p class="eyebrow">Hai lựa chọn · Một tinh thần GuavaFiber</p>
         <h2 id="candy-lines-title">Chúng tôi mang<br>đến <span>2 dòng kẹo</span></h2>
       </div>
       <svg class="candy-lines-heading__guava" aria-hidden="true" viewBox="0 0 260 180">
@@ -328,7 +333,7 @@ const introducePage = () => `<main id="main-content" class="product-page">
   </section>
 
   <section class="product-anatomy" aria-labelledby="product-anatomy-title"><div class="shell">
-    <header class="product-section-heading product-section-heading--compact"><div><p class="eyebrow">Cấu trúc trải nghiệm</p><h2 id="product-anatomy-title">Ba lớp tạo nên một viên kẹo Fiuava.</h2></div></header>
+    <header class="product-section-heading product-section-heading--compact"><div><p class="eyebrow">Cấu trúc trải nghiệm</p><h2 id="product-anatomy-title">Ba lớp tạo nên một viên kẹo GuavaFiber.</h2></div></header>
     <ol class="product-anatomy__list">${[
       ['Nguồn xơ bã ổi','Phần bã sau ép được lựa chọn làm nguyên liệu đầu vào để thu nhận nguồn pectin và xơ hòa tan.'],
       ['Hương vị và kết cấu','Hương ổi chua ngọt đi cùng cấu trúc dai mềm, hướng đến cảm giác dễ ăn và không bết dính.'],
@@ -358,20 +363,20 @@ const introducePage = () => `<main id="main-content" class="product-page">
     ].map(([number,title,copy])=>`<article><b>${number}</b><h3>${title}</h3><p>${copy}</p></article>`).join('')}</div>
   </section>
 
-  <section class="product-contact"><div class="shell product-contact__inner"><div><h2>Cần hồ sơ kỹ thuật chi tiết hơn?</h2><p>Liên hệ nhóm Fiuava để trao đổi về công thức, quy trình nghiên cứu hoặc cơ hội hợp tác.</p></div><a class="button button--primary" href="${routes.contact}">Liên hệ với chúng tôi</a></div></section>
+  <section class="product-contact"><div class="shell product-contact__inner"><div><h2>Cần hồ sơ kỹ thuật chi tiết hơn?</h2><p>Liên hệ nhóm GuavaFiber để trao đổi về công thức, quy trình nghiên cứu hoặc cơ hội hợp tác.</p></div><a class="button button--primary" href="${routes.contact}">Liên hệ với chúng tôi</a></div></section>
 </main>`;
 
 const aboutPage = () => `<main id="main-content" class="about-page">
   ${pageHero('Câu chuyện thương hiệu', 'Một viên kẹo nhỏ bắt đầu từ một câu hỏi lớn.', 'Làm thế nào để nguồn chất xơ trong bã ổi không bị lãng phí, mà trở thành một lựa chọn hữu ích cho sức khỏe tiêu hóa?')}
-  <section class="team-section team-section--lead"><div class="shell"><header class="section-title section-title--center"><p class="eyebrow">Đội ngũ phát triển Fiuava</p><h2>Năm thành viên, cùng phát triển một sản phẩm có ích.</h2><p>Đội ngũ cùng tham gia nghiên cứu sản phẩm, xây dựng mô hình kinh doanh và đưa Fiuava đến đúng nhóm khách hàng.</p></header><div class="team-grid">${[
+  <section class="team-section team-section--lead"><div class="shell"><header class="section-title section-title--center"><p class="eyebrow">Đội ngũ phát triển GuavaFiber</p><h2>Năm thành viên, cùng phát triển một sản phẩm có ích.</h2><p>Đội ngũ cùng tham gia nghiên cứu sản phẩm, xây dựng mô hình kinh doanh và đưa GuavaFiber đến đúng nhóm khách hàng.</p></header><div class="team-grid">${[
     ['Nguyễn Hương Giang','team/ngo-ngoc-uyen-phuong.jpg'],
     ['Hồ Đặng Minh Trâm','team/nguyen-huong-giang.jpg'],
     ['Ngô Ngọc Uyên Phương','team/ho-dang-minh-tram.jpg'],
     ['Nguyễn Thành Phát','team/nguyen-thanh-phat.jpg'],
     ['Nguyễn Văn Việt','team/nguyen-van-viet.jpg']
   ].map(([name,src])=>`<article>${src ? `<figure class="team-photo"><img src="${asset(src)}" alt="Ảnh chân dung ${name}" width="800" height="1000" loading="lazy" decoding="async"></figure>` : imagePlaceholder(`Ảnh ${name}`, 'team-photo team-photo--placeholder')}<div><p>Thành viên dự án</p><h3>${name}</h3></div></article>`).join('')}</div></div></section>
-  <section class="about-identity shell"><figure class="about-identity__media"><img src="${asset('team/fiuava-team-group.png')}" width="1128" height="1409" loading="lazy" decoding="async" alt="Năm thành viên đội ngũ phát triển Fiuava"></figure><div class="about-identity__copy"><p class="eyebrow">Chúng tôi là ai?</p><h2>Một nhóm trẻ theo đuổi thực phẩm xanh và tiện dụng.</h2><p>Fiuava được hình thành từ nhu cầu thực tế về một món ăn vặt an toàn, dễ sử dụng nhưng vẫn mang lại giá trị dinh dưỡng. Nhóm lựa chọn bã ổi — nguồn phụ phẩm dồi dào từ ngành chế biến nước ép — làm điểm bắt đầu cho hành trình nghiên cứu.</p><p>Mục tiêu không chỉ là tạo ra một viên kẹo ngon, mà còn xây dựng giải pháp có khả năng kết nối sức khỏe người dùng với giá trị tuần hoàn của nông sản Việt.</p><a class="text-link about-identity__website" href="https://fiuava.website/" target="_blank" rel="noreferrer">fiuava.website <span aria-hidden="true">↗</span></a></div></section>
-  <section class="formation-section" aria-labelledby="formation-title"><div class="shell formation-layout"><header class="formation-heading"><p class="eyebrow">Câu chuyện hình thành Fiuava</p><h2 id="formation-title">Từ phần nguyên liệu bị bỏ quên đến một viên kẹo hữu ích.</h2><div class="formation-heading__copy"><p class="formation-lead">Bã ổi sau quá trình ép vẫn còn nguồn chất xơ tự nhiên có thể tiếp tục được khai thác.</p><p>Fiuava bắt đầu từ quan sát đó. Nhóm nghiên cứu cách thu nhận chất xơ, điều chỉnh hương vị và kết cấu để đưa nguồn nguyên liệu này vào một định dạng nhỏ gọn, gần gũi hơn với đời sống hằng ngày.</p></div></header><div class="foundation-list">${[
+  <section class="about-identity shell"><figure class="about-identity__media"><img src="${asset('team/fiuava-team-group.png')}" width="1128" height="1409" loading="lazy" decoding="async" alt="Năm thành viên đội ngũ phát triển GuavaFiber"></figure><div class="about-identity__copy"><p class="eyebrow">Chúng tôi là ai?</p><h2>Một nhóm trẻ theo đuổi thực phẩm xanh và tiện dụng.</h2><p>GuavaFiber được hình thành từ nhu cầu thực tế về một món ăn vặt an toàn, dễ sử dụng nhưng vẫn mang lại giá trị dinh dưỡng. Nhóm lựa chọn bã ổi — nguồn phụ phẩm dồi dào từ ngành chế biến nước ép — làm điểm bắt đầu cho hành trình nghiên cứu.</p><p>Mục tiêu không chỉ là tạo ra một viên kẹo ngon, mà còn xây dựng giải pháp có khả năng kết nối sức khỏe người dùng với giá trị tuần hoàn của nông sản Việt.</p><a class="text-link about-identity__website" href="https://guavafiber.website/" target="_blank" rel="noreferrer">guavafiber.website <span aria-hidden="true">↗</span></a></div></section>
+  <section class="formation-section" aria-labelledby="formation-title"><div class="shell formation-layout"><header class="formation-heading"><p class="eyebrow">Câu chuyện hình thành GuavaFiber</p><h2 id="formation-title">Từ phần nguyên liệu bị bỏ quên đến một viên kẹo hữu ích.</h2><div class="formation-heading__copy"><p class="formation-lead">Bã ổi sau quá trình ép vẫn còn nguồn chất xơ tự nhiên có thể tiếp tục được khai thác.</p><p>GuavaFiber bắt đầu từ quan sát đó. Nhóm nghiên cứu cách thu nhận chất xơ, điều chỉnh hương vị và kết cấu để đưa nguồn nguyên liệu này vào một định dạng nhỏ gọn, gần gũi hơn với đời sống hằng ngày.</p></div></header><div class="foundation-list">${[
     ['Thông điệp','Biến một phần nguyên liệu thường bị bỏ lại thành lựa chọn nhỏ, dễ tiếp cận và dễ mang theo.'],
     ['Tầm nhìn','Phát triển thực phẩm từ nông sản Việt theo hướng có trách nhiệm và khai thác nguyên liệu hiệu quả hơn.'],
     ['Sứ mệnh','Kết nối sự tiện lợi trong đời sống hằng ngày với giá trị dinh dưỡng và tư duy tuần hoàn.'],
@@ -387,8 +392,8 @@ const aboutPage = () => `<main id="main-content" class="about-page">
 
 const radio = (name, title, options) => `<fieldset><legend>${title}</legend><div class="option-grid">${options.map((x)=>`<label><input type="radio" name="${name}" value="${x}" required><span>${x}</span></label>`).join('')}</div></fieldset>`;
 const surveyPage = () => `<main id="main-content" class="survey-page">
-  <section class="survey-masthead" aria-labelledby="survey-title"><div class="shell"><p class="eyebrow">Khảo sát phát triển sản phẩm</p><h1 id="survey-title">Giúp Fiuava hiểu điều bạn thực sự cần.</h1><p>Câu trả lời của bạn giúp nhóm điều chỉnh hương vị, kết cấu, bao bì và cách sản phẩm xuất hiện trong đời sống hằng ngày.</p></div></section>
-  <section class="survey-layout shell"><aside class="survey-guide"><p>Khảo sát gồm ba phần</p><h2>Không có đáp án đúng hay sai.</h2><p>Hãy chọn phương án gần nhất với thói quen và mong muốn của bạn. Thông tin chỉ được dùng cho quá trình nghiên cứu, phát triển Fiuava.</p><ol aria-label="Các phần của khảo sát"><li><a href="#survey-habits"><span>01</span>Thói quen hiện tại</a></li><li><a href="#survey-product"><span>02</span>Trải nghiệm sản phẩm</a></li><li><a href="#survey-context"><span>03</span>Bối cảnh sử dụng</a></li></ol></aside><form class="survey-form js-form" data-form-type="survey" novalidate><label class="form-honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+  <section class="survey-masthead" aria-labelledby="survey-title"><div class="shell"><p class="eyebrow">Khảo sát phát triển sản phẩm</p><h1 id="survey-title">Giúp GuavaFiber hiểu điều bạn thực sự cần.</h1><p>Câu trả lời của bạn giúp nhóm điều chỉnh hương vị, kết cấu, bao bì và cách sản phẩm xuất hiện trong đời sống hằng ngày.</p></div></section>
+  <section class="survey-layout shell"><aside class="survey-guide"><p>Khảo sát gồm ba phần</p><h2>Không có đáp án đúng hay sai.</h2><p>Hãy chọn phương án gần nhất với thói quen và mong muốn của bạn. Thông tin chỉ được dùng cho quá trình nghiên cứu, phát triển GuavaFiber.</p><ol aria-label="Các phần của khảo sát"><li><a href="#survey-habits"><span>01</span>Thói quen hiện tại</a></li><li><a href="#survey-product"><span>02</span>Trải nghiệm sản phẩm</a></li><li><a href="#survey-context"><span>03</span>Bối cảnh sử dụng</a></li></ol></aside><form class="survey-form js-form" data-form-type="survey" novalidate><label class="form-honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
     <section class="survey-chapter" id="survey-habits" aria-labelledby="survey-habits-title"><header><span>01 / 03</span><h2 id="survey-habits-title">Thói quen hiện tại</h2><p>Một vài thông tin nền để nhóm hiểu cách bạn ăn nhẹ và quan tâm đến chất xơ.</p></header>
       ${radio('age','Bạn thuộc nhóm tuổi nào?',['Dưới 18','18–25','26–44','Trên 45'])}
       ${radio('role','Hoạt động chính hiện tại của bạn?',['Học sinh / sinh viên','Nhân viên văn phòng','Kinh doanh / tự do','Nội trợ / chăm sóc gia đình','Khác'])}
@@ -396,7 +401,7 @@ const surveyPage = () => `<main id="main-content" class="survey-page">
       ${radio('produce_frequency','Rau hoặc trái cây xuất hiện trong bữa ăn của bạn ở mức nào?',['Hiếm khi','Khoảng một bữa mỗi ngày','Khoảng hai bữa mỗi ngày','Gần như mọi bữa'])}
       ${radio('fiber','Bạn quan tâm đến việc bổ sung chất xơ ở mức nào?',['Chưa quan tâm','Thỉnh thoảng','Khá quan tâm','Rất quan tâm'])}
     </section>
-    <section class="survey-chapter" id="survey-product" aria-labelledby="survey-product-title"><header><span>02 / 03</span><h2 id="survey-product-title">Trải nghiệm sản phẩm</h2><p>Cho Fiuava biết điều gì khiến một viên kẹo trở nên dễ dùng hơn với bạn.</p></header>
+    <section class="survey-chapter" id="survey-product" aria-labelledby="survey-product-title"><header><span>02 / 03</span><h2 id="survey-product-title">Trải nghiệm sản phẩm</h2><p>Cho GuavaFiber biết điều gì khiến một viên kẹo trở nên dễ dùng hơn với bạn.</p></header>
       ${radio('priority','Khi chọn một món ăn nhẹ, điều gì quan trọng nhất?',['Hương vị','Thành phần rõ ràng','Tiện mang theo','Tận dụng nguyên liệu tốt hơn'])}
       ${radio('type','Bạn ưu tiên kết cấu nào?',['Kẹo dẻo mềm','Kẹo dai rõ hơn','Dễ tan khi sử dụng','Chưa xác định'])}
       ${radio('taste','Mức hương ổi bạn mong muốn?',['Thoang thoảng','Vừa phải','Đậm vị ổi','Không có ưu tiên'])}
@@ -404,11 +409,11 @@ const surveyPage = () => `<main id="main-content" class="survey-page">
       ${radio('texture','Kích thước một viên kẹo nên như thế nào?',['Nhỏ, dùng nhanh','Vừa, dễ nhai','Lớn hơn để cảm nhận lâu','Chưa xác định'])}
     </section>
     <section class="survey-chapter" id="survey-context" aria-labelledby="survey-context-title"><header><span>03 / 03</span><h2 id="survey-context-title">Bối cảnh sử dụng</h2><p>Phần cuối tập trung vào thời điểm, kích thước gói và thông tin bạn muốn nhìn thấy.</p></header>
-      ${radio('usage_time','Bạn dễ dùng Fiuava nhất vào thời điểm nào?',['Sau một bữa ăn vội','Trong giờ nghỉ giữa ngày','Trên đường đi học / đi làm','Khi đi chơi hoặc di chuyển'])}
+      ${radio('usage_time','Bạn dễ dùng GuavaFiber nhất vào thời điểm nào?',['Sau một bữa ăn vội','Trong giờ nghỉ giữa ngày','Trên đường đi học / đi làm','Khi đi chơi hoặc di chuyển'])}
       ${radio('pack_size','Kích thước gói nào thuận tiện hơn?',['Gói nhỏ 5–7 viên','Gói vừa 10–15 viên','Gói lớn để chia sẻ','Gói dùng thử trước'])}
       ${radio('label_info','Thông tin nào trên bao bì bạn quan tâm nhất?',['Thành phần và nguồn chất xơ','Thông tin dinh dưỡng','Hướng dẫn bảo quản','Câu chuyện tận dụng bã ổi'])}
-      ${radio('trial','Nếu Fiuava có đợt dùng thử, bạn sẽ cân nhắc thế nào?',['Sẵn sàng tham gia','Có thể tham gia','Cần thêm thông tin','Chưa có nhu cầu'])}
-      <label class="text-field"><span>Điều bạn mong chờ nhất ở Fiuava <small>(không bắt buộc)</small></span><textarea name="message" rows="5" placeholder="Hương vị, kết cấu, bao bì hoặc điều bạn muốn nhóm cải thiện…"></textarea></label>
+      ${radio('trial','Nếu GuavaFiber có đợt dùng thử, bạn sẽ cân nhắc thế nào?',['Sẵn sàng tham gia','Có thể tham gia','Cần thêm thông tin','Chưa có nhu cầu'])}
+      <label class="text-field"><span>Điều bạn mong chờ nhất ở GuavaFiber <small>(không bắt buộc)</small></span><textarea name="message" rows="5" placeholder="Hương vị, kết cấu, bao bì hoặc điều bạn muốn nhóm cải thiện…"></textarea></label>
     </section>
     <div class="form-actions"><button class="button button--primary" type="submit">Gửi câu trả lời <b aria-hidden="true">→</b></button><p>Gửi một lần khi bạn đã hoàn thành cả ba phần.</p></div><p class="form-status" role="status" hidden></p>
   </form></section>
@@ -416,9 +421,9 @@ const surveyPage = () => `<main id="main-content" class="survey-page">
 
 const contactPage = () => `<main id="main-content" class="contact-page">
   <section class="contact-stage" aria-labelledby="contact-title"><div class="shell">
-    <header class="contact-intro"><p class="eyebrow">Liên hệ Fiuava</p><h1 id="contact-title">Có điều muốn trao đổi? Hãy viết cho chúng tôi.</h1><p>Sản phẩm, nghiên cứu hay một đề nghị hợp tác — mọi lời nhắn đều được chính nhóm Fiuava đọc và phản hồi.</p></header>
+    <header class="contact-intro"><p class="eyebrow">Liên hệ GuavaFiber</p><h1 id="contact-title">Có điều muốn trao đổi? Hãy viết cho chúng tôi.</h1><p>Sản phẩm, nghiên cứu hay một đề nghị hợp tác — mọi lời nhắn đều được chính nhóm GuavaFiber đọc và phản hồi.</p></header>
     <div class="contact-workspace"><form class="contact-form js-form" data-form-type="contact" novalidate><label class="form-honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><header class="contact-form__head"><h2>Gửi lời nhắn</h2><p>Các mục có nhãn rõ ràng đều cần được hoàn thành trước khi gửi.</p></header><div class="field-row"><label class="text-field"><span>Họ và tên</span><input name="name" autocomplete="name" required placeholder="Tên của bạn"></label><label class="text-field"><span>Số điện thoại</span><input name="phone" inputmode="tel" autocomplete="tel" required placeholder="Số điện thoại"></label></div><div class="field-row"><label class="text-field"><span>Địa chỉ email</span><input type="email" name="email" autocomplete="email" required placeholder="email@example.com"></label><label class="text-field"><span>Chủ đề trao đổi</span><select name="topic" required><option value="" selected disabled>Chọn nội dung</option><option value="Sản phẩm">Sản phẩm</option><option value="Hợp tác">Hợp tác</option><option value="Nghiên cứu">Nghiên cứu</option><option value="Khác">Nội dung khác</option></select></label></div><label class="text-field"><span>Nội dung lời nhắn</span><textarea name="message" rows="7" required placeholder="Bạn muốn trao đổi điều gì?"></textarea></label><div class="contact-form__footer"><button class="button button--primary" type="submit">Gửi lời nhắn <b aria-hidden="true">→</b></button><p class="contact-form__note">${icon('shield')} Thông tin chỉ được dùng để phản hồi yêu cầu này.</p></div><p class="form-status" role="status" hidden></p></form>
-      <aside class="contact-rail"><section class="contact-details" aria-labelledby="contact-details-title"><h2 id="contact-details-title">Liên hệ trực tiếp</h2><p>Nếu không muốn dùng biểu mẫu, bạn có thể chọn một trong các kênh dưới đây.</p><div class="contact-list">${contactItems}</div></section><section class="contact-map-card" aria-labelledby="map-title"><div id="contact-map" class="contact-map" role="region" aria-label="Bản đồ 140 Lê Trọng Tấn, phường Tây Thạnh, Thành phố Hồ Chí Minh"></div><div class="contact-map-card__copy"><p class="eyebrow">Địa chỉ</p><h2 id="map-title">Điểm liên hệ Fiuava</h2><p>140 Lê Trọng Tấn, phường Tây Thạnh, TP. Hồ Chí Minh</p><a class="text-link" href="https://maps.google.com/?q=140+Lê+Trọng+Tấn,+phường+Tây+Thạnh,+TP.+Hồ+Chí+Minh" target="_blank" rel="noreferrer">Mở trên Google Maps <span>↗</span></a></div></section></aside>
+      <aside class="contact-rail"><section class="contact-details" aria-labelledby="contact-details-title"><h2 id="contact-details-title">Liên hệ trực tiếp</h2><p>Nếu không muốn dùng biểu mẫu, bạn có thể chọn một trong các kênh dưới đây.</p><div class="contact-list">${contactItems}</div></section><section class="contact-map-card" aria-labelledby="map-title"><div id="contact-map" class="contact-map" role="region" aria-label="Bản đồ 140 Lê Trọng Tấn, phường Tây Thạnh, Thành phố Hồ Chí Minh"></div><div class="contact-map-card__copy"><p class="eyebrow">Địa chỉ</p><h2 id="map-title">Điểm liên hệ GuavaFiber</h2><p>140 Lê Trọng Tấn, phường Tây Thạnh, TP. Hồ Chí Minh</p><a class="text-link" href="https://maps.google.com/?q=140+Lê+Trọng+Tấn,+phường+Tây+Thạnh,+TP.+Hồ+Chí+Minh" target="_blank" rel="noreferrer">Mở trên Google Maps <span>↗</span></a></div></section></aside>
     </div>
   </div></section>
 </main>`;
@@ -461,7 +466,7 @@ if (contactMap) {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
     const markerIcon = L.divIcon({ className: 'contact-map-marker', html: '<span aria-hidden="true"></span>', iconSize: [44, 44], iconAnchor: [22, 42] });
-    L.marker(areaCenter, { icon: markerIcon, title: '140 Lê Trọng Tấn, phường Tây Thạnh' }).addTo(map).bindPopup('<strong>Điểm liên hệ Fiuava</strong><br>140 Lê Trọng Tấn, phường Tây Thạnh, TP. Hồ Chí Minh');
+    L.marker(areaCenter, { icon: markerIcon, title: '140 Lê Trọng Tấn, phường Tây Thạnh' }).addTo(map).bindPopup('<strong>Điểm liên hệ GuavaFiber</strong><br>140 Lê Trọng Tấn, phường Tây Thạnh, TP. Hồ Chí Minh');
     window.addEventListener('load', () => map.invalidateSize(), { once: true });
   };
   initContactMap();
@@ -539,8 +544,8 @@ document.querySelectorAll('.js-form').forEach((form) => form.addEventListener('s
     await submitToGoogleSheets({ ...config, formType: form.dataset.formType, values });
     status.dataset.state = 'success';
     status.textContent = form.dataset.formType === 'contact'
-      ? 'Cảm ơn bạn! Nội dung đã được gửi tới lienhe@fiuava.website.'
-      : 'Cảm ơn bạn! Dữ liệu đã được gửi đến Fiuava.';
+      ? 'Cảm ơn bạn! Nội dung đã được gửi tới contact@guavafiber.website.'
+      : 'Cảm ơn bạn! Dữ liệu đã được gửi đến GuavaFiber.';
     form.reset();
   } catch (error) {
     status.dataset.state = 'error'; status.textContent = formErrorMessage(error);

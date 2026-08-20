@@ -496,6 +496,7 @@ async function expandMainScrollContainers(page) {
 
 const browser = await chromium.launch({
   headless: true,
+  executablePath: process.env.PLAYWRIGHT_CHROME_PATH || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
 });
 
 try {

@@ -1,8 +1,8 @@
 /**
- * Fiuava form receiver — bind this script to the target Google Sheet.
+ * GuavaFiber form receiver — bind this script to the target Google Sheet.
  * Deploy as Web app, execute as yourself, access: Anyone.
  */
-const CONTACT_RECIPIENT = 'lienhe@fiuava.website';
+const CONTACT_RECIPIENT = 'contact@guavafiber.website';
 
 const FORM_CONFIG = Object.freeze({
   survey: {
@@ -105,7 +105,7 @@ function sendContactEmail_(payload) {
   const message = cleanText_(values.message, 5000);
   const subjectTopic = topic.replace(/[\r\n]+/g, ' ').trim() || 'Nội dung khác';
   const body = [
-    'Bạn vừa nhận được một lời nhắn mới từ website Fiuava.',
+    'Bạn vừa nhận được một lời nhắn mới từ website GuavaFiber.',
     '',
     'Họ và tên: ' + name,
     'Số điện thoại: ' + phone,
@@ -119,8 +119,8 @@ function sendContactEmail_(payload) {
     'Trang gửi: ' + cleanText_(payload.pageUrl, 500),
   ].join('\n');
 
-  MailApp.sendEmail(CONTACT_RECIPIENT, '[Fiuava] Liên hệ mới — ' + subjectTopic, body, {
-    name: 'Website Fiuava',
+  MailApp.sendEmail(CONTACT_RECIPIENT, '[GuavaFiber] Liên hệ mới — ' + subjectTopic, body, {
+    name: 'Website GuavaFiber',
     replyTo: email,
   });
 }
